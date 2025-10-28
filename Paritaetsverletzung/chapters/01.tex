@@ -1,0 +1,82 @@
+\chapter{Auswertung, Fehlerrechnung und Diskussion der Messergebnisse}
+\section{Asymmetrie der Summen}
+Zunächst wird die Asymmetrie $E$ mithilfe der Formel 
+$$ E = \frac{\sum N_- - \sum N_+}{\sum N_- + \sum N_+}
+$$ berechnet. Hierfür werden zuerst jeweils alle zu $N_{-}$ und $N_{+}$ gehörenden Messwerte aufsummiert
+ \begin{equation*}
+     \overline{N}_{-} = \sum N_{-} = 428262 \qquad \overline{N}_{+} = \sum N_{+} = 416099 ~.
+ \end{equation*}
+ Als statistische Unsicherheit dieser Werte werden deren Wurzeln angenommen, da die Verteilung eine Poisson-Verteilung entspricht
+  \begin{equation*}
+     \sigma_{\overline{N}_{-}} = 654.4173 \qquad \sigma_{\overline{N}_{+}} = 645.0574 ~.
+ \end{equation*}
+ Mittels Gaußscher Fehlerfortpflanzung kann nun der statistische Fehler berechnet werden. Es ergibt sich
+ \begin{equation*}
+     \sigma_\text{stat} = \sqrt{\left(\frac{2\overline{N}_{-}}{(\overline{N}_{-}+\overline{N}_{+})^{2}} \cdot \sigma_{\overline{N}_{+}}\right)^{2} + \left(\frac{2\overline{N}_{+}}{(\overline{N}_{-}+\overline{N}_{+})^{2}} \cdot \sigma_{\overline{N}_{-}}\right)^{2}} = 0.0011 ~.
+ \end{equation*}
+Als systematische Unsicherheit wird ein Wert von $\sigma=120 \cdot 30$ für den Zähler angenommen. Das entspricht etwas mehr als der mittleren Unsicherheit, die aus dem Auswertungsskript der Messung geliefert wird.  Dadurch folgt für die systematische Unsicherheit der Asymmetrie: 
+ \begin{equation*}
+     \sigma_\text{sys} = \sqrt{\left(\frac{2\overline{N}_{-}}{(\overline{N}_{-}+\overline{N}_{+})^{2}} \cdot \sigma \right)^{2} + \left(\frac{2\overline{N}_{+}}{(\overline{N}_{-}+\overline{N}_{+})^{2}} \cdot \sigma \right)^{2}} = 0.006 ~.
+ \end{equation*}
+Somit ergibt sich für die Asymmetrie $$E=0.0144 \pm 0.0011 \pm 0.006$$
+    
+
+\section{Asymmerie der Einzelmessungen}
+Mit dieser Methode soll die die Asymmetrie ermittelt werden, indem $E$
+$$E=\sum \frac{N_{-}-N_{+}}{N_{-}+N_{+}}$$
+aus den einzelnen Messpaaren $N_{-}$ und $N_{+}$ berechnet und anschließend der Mittelwert $\overline{E}$ gebildet wird. Die statistische Unsicherheit ist durch die Standardabweichung der Asymmetrien geteilt durch die Wurzel der Anzahl der Messungen $n=30$ gegeben $$\sigma_\text{stat}= \sqrt{\frac{\sum (E_\text{i}-\overline{E})^{2}}{n}} = 0.00109~.$$ Der systematische Fehler wird mit 
+ \begin{equation*}
+     \sigma_\text{sys} = \frac{\sqrt{2(1+E^{2})}}{\overline{N}_{-}+\overline{N}_{+}} \cdot \sigma = 0.0002
+ \end{equation*}
+mit $E=0.0144,\, \overline{N}_{-}=428262,\, \overline{N}_{+}=416099$ und $\sigma=120$ berechnet. Mit dieser Methode ergibt sich $$E=0.0144 \pm 0.00109 \pm 0.0002$$
+Sowohl die ermittelten Werte für $E$, die aus den beiden Methoden resultieren, als auch deren berechneten Unsicherheiten stimmen gut überein. Daraus lässt sich schlussfolgern, dass die Annahme zur Berechnung der statistischen Unsicherheit in 2.1 zutrifft, dass die Werte poissonverteilt sind. Auch die Approximation der Gaußschen Fehlerfortpflanzung zur Berechnung der Unsicherheiten ist in diesem Fall passend. Da beide Methoden Ergebnisse liefern, die sehr nah beieinander liegen, eignen sie sich für die Ermittlung der Asymmetrie.
+
+\begin{table}[!htb]
+    \centering
+    \caption{Anzahl der Gammaquanten am Detektor}
+    \label{}
+    \begin{tabular}{c c c c c c}\\
+\toprule
+Messung & $N_{-}$ & $N_{+}$ & Messung & $N_{-}$  & $N_{+}$ \\
+\hline
+1 & 13397 & 13141 & 16 & 14129 & 13783\\
+2 & 13690 & 13138 & 17 & 14075 & 14131\\
+3 & 13816 & 13519 & 18 & 14570 & 13969\\
+4 & 13856 & 13416 & 19 & 14394 & 13910\\
+5 & 13748 & 13575 & 20 & 14398 & 13891\\
+6 & 13694 & 13374 & 21 & 14604 & 14091\\
+7 & 14119 & 13407 & 22 & 14598 & 14081\\
+8 & 13989 & 13404 & 23 & 14799 & 14342\\
+9 & 13993 & 13612 & 24 & 14806 & 14200\\
+10 & 14045 & 13738 & 25 & 14828 & 14162\\
+11 & 13756 & 13550 & 26 & 14926 & 14328\\
+12 & 13966 & 13658 & 27 & 14924 & 14436\\
+13 & 14059 & 13751 & 28 & 14806 & 14629\\
+14 & 14135 & 13709 & 29 & 14870 & 14452\\ 
+15 & 14135 & 13950 & 30 & 15137 & 14752\\
+\bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+\section{Helizität}
+Mit der aus den vorherigen Teilen ermittelten Asymmetrien kann nun die Polarisation $P_{G}$ der Gammaquanten bestimmt werden. Dies erfolgt mit Formel \ref{Polarisation}. Wie schon in der Vorbereitung beschrieben gilt $$\frac{\Phi_0}{\Phi_C^-}= 0.52$$ mit einer Unsicherheit $\sigma_{\frac{\Phi_0}{\Phi_C^-}}=0.05$ und $f=\frac{2}{26}$, wobei für den Polarisationsgrad $f$ eine Unsicherheit von $\sigma_{f}=0.007$ abgeschätzt wird, was einer relativen Unsicherheit von etwa \SI{9}{\%} entspricht. Diese ist so gewählt, da der tatsächliche Polarisationsgrad, dessen Abhängigkeiten und Unsicherheiten nicht gemessen wird bzw. im Falle der Abhängigkeiten und Unsicherheiten nicht angegeben ist. \\
+Die statistischen und systematischen Unsicherheiten auf die Polarisation können mit gaußscher Fehlerfortpflanzung ermittelt werden.
+ $$\sigma_{P_{G,\text{stat}}}=\frac{\sigma_{E_\text{stat}}}{f \cdot \frac{\Phi_0}{\Phi_C^-}}~.$$ 
+$$\sigma_{P_\text{sys}}=\sqrt{\left(\frac{1}{f \cdot \frac{\Phi_0}{\Phi_C^-}}\cdot \sigma_{E_\text{sys}} \right)^{2} + \left( -\frac{E}{f \cdot \frac{\Phi_0}{\Phi_C^-}^{2}}\cdot \sigma_{\frac{\Phi_0}{\Phi_C^-}}\right)^{2} + \left(\frac{E}{f^{2} \cdot \frac{\Phi_0}{\Phi_C^-}} \cdot \sigma_{f}\right)^{2}} ~.$$
+Es ergeben sich die Polarisationen $P_{G,1}$ für die erste Methode und $P_{G,2}$ für die zweite Methode \begin{align*}
+    P_{G,1}&=0.3601 \pm 0.0272 \pm 0.1581 \\
+    P_{G,2}&=0.3593 \pm 0.0272 \pm 0.0478 ~.
+\end{align*} 
+Gemäß Formel \ref{Helizität} kann nun die Helizität $H$ berechnet werden. Der Wert für $L$, dem Helizitätsübertrag wird mit $L=0.8$, $\sigma_{L}=0.15$, mit der Abbildung 7.7 des blauen Buches [JW23], abgeschätzt. Im relevanten Bereich ist der Helizitätsübertrag eine gerade, sodass die Unsicherheit mit Größtfehlerschätzung bestimmt werden kann. Die Unsicherheiten auf $H$ werden mit gaußscher Fehlerfortpflanzung berechnet. 
+\begin{align*} 
+    \sigma_{H,\text{stat}}&=\sqrt{\left(\frac{\sigma_{P_{G,\text{stat}}}}{L}\right)^{2}} \\
+    \sigma_{H,\text{sys}}&=\sqrt{\left(\frac{1}{L}\cdot \sigma_{P_{G,\text{sys}}}\right)^{2} + \left(-\frac{P}{L^{2}}\cdot \sigma_{L}\right)^{2}}
+\end{align*} 
+Die Helizität beträgt 
+\begin{align*} 
+    H_{1}&=0.4502 \pm 0.0340 \pm 0.2149\\
+    H_{2}&=0.4492 \pm 0.0340 \pm 0.1033 ~.
+\end{align*}
+Es ist zu sehen, dass die Helizität auch unter Einbezug der Unsicherheiten ungleich Null ist und daher die Parität verletzt ist. Somit ist nachgewiesen, dass die Parität beim $\beta$-Zerfall der schwachen Kraft keine Erhaltungsgröße ist.
