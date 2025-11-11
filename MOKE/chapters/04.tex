@@ -3,3 +3,70 @@
 The before described calibration is carried out for both the p-MOKE and l-MOKE setup, yielding the  calibration factors $(\frac{\Delta\phi}{\Delta S})_{\text{p-MOKE}} =  \SI{1709.4}{\frac{m\degree}{V}}$ and $(\frac{\Delta\phi}{\Delta S})_{\text{l-MOKE}} =\SI{2898.5}{\frac{m\degree}{V}}$. 
 
 \section{Task 1 \& 2: Co thin film and Co/Pt Multilayers (p-MOKE and l-MOKE)}
+
+For each of the samples \#6 (Co thin film), \#7 and \#8 (Co/Pt multilayers), hysteresis curves were recorded in both p-MOKE and l-MOKE configurations, as shown in Fig.~\ref{fig:task12}. 
+
+\subsection*{Determination of Easy Axis of Magnetization}
+
+The easy axis of magnetization can be determined by comparing the hysteresis loops obtained in the two geometries. 
+In the geometry where the magnetization aligns more readily with the applied magnetic field, the Kerr signal saturates at smaller magnetic fields and exhibits a square, nearly rectangular hysteresis loop. 
+This direction corresponds to the easy axis of magnetization. 
+In contrast, along the hard axis the magnetization rotates gradually toward the field direction, resulting in a slanted loop with a much smaller Kerr amplitude and weaker hysteresis.
+
+For thin ferromagnetic films such as pure Co layers, the shape anisotropy usually dominates, leading to an in-plane easy axis.  
+However, in Co/Pt multilayers, strong interfacial spin–orbit coupling at the Co/Pt interfaces introduces an additional perpendicular magnetic anisotropy (PMA) that can overcome the shape anisotropy, reorienting the easy axis out of the plane~\cite{multilayers}.  \\
+
+This behaviour is reflected in the recorded hysteresis: For the thin cobalt film sample \#6, the easy magnetic axis lies in the plane. A hard axis cannot be determined from the recorded hysteresis because of the small magnetic field range, but should also lie in the film plane. 
+For the Cobalt-Platinum multilayers, the easy axis points out of the plane, as seen in their p-MOKE hysteresis, while the hard axis stays inside the film plane, visible in their l-MOKE hysteresis. \\
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{MOKE/task12.png}
+    \caption{P-MOKE and l-MOKE measurements of samples \#6, \#7 and \#8.}
+    \label{fig:task12}
+\end{figure}
+
+From the hysteresis loops, the coercive fields $H_c$  and saturation Kerr rotations $\theta_K^{\mathrm{sat}}$ were determined for each geometry (see Table~\ref{tab:task12}), by averaging of the determined value whenever possible.  
+These quantities allow a direct comparison of the magnetic anisotropy and the influence of the substrate.
+
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{lccccc}\toprule
+         Sample & Geometry & $\mu_0 H_c$ in mT & $\theta_K^{\mathrm{rem}}$ in m\degree & $\theta_K^{\mathrm{sat}}$ in m\degree & Easy Axis \\\midrule
+        \#6 (Co on MgO (100)) & l-MOKE& 8.5&6.5 & 7.5& in-plane\\
+             & p-MOKE& -&- &- & -\\
+        \#7 (Co/Pt on SiO$_2$) & l-MOKE& 92 & 74& 52.5& out-of-plane\\
+             & p-MOKE& 9.5& 82.2& 83.2& \\
+        \#8 (Co/Pt on MgO (111)) & l-MOKE& 375 & 82.5& 65& out-of-plane\\
+             & p-MOKE& 48 & 75&73 & -\\
+
+         
+         
+         \bottomrule
+    \end{tabular}
+    \caption{Summary of determined magnetic parameters for Co thin film and Co/Pt multilayers.}
+    \label{tab:task12}
+\end{table}
+
+\subsection*{Discussion}
+
+\paragraph{Sample \#6: Cobalt thin film on MgO (100)}
+Cobalt crystallizes in a hexagonal closed packed structure with in-plane easy axes due to its magnetic anisotropy. For the Co film on MgO(100), both easy and hard axes lie in the film plane~\cite{prep}.  
+The recorded l-MOKE hysteresis loop exhibits a soft magnetic behaviour with low coercivity (\(\mu_0 H_c \approx 10\) mT) and magnetization reversal, consistent with in-plane magnetization.  \\
+The p-MOKE signal is similar for magnetization and demagnetization, without any hysteresis. The out-of-plane magnetization component therefore seems to be negligible, indicating both the easy and hard axis lie in the film plane. 
+
+\paragraph{Sample \#7: Cobalt-Platinum multilayer on SiO$_2$}
+The multilayer structure introduces interface anisotropy through the Co/Pt interfaces, leading to perpendicular magnetic anisotropy \cite{multilayers}. \\
+The p-MOKE hysteresis of sample \#7 shows a square loop with sharp switching, which is characteristic for an easy axis.
+The l-MOKE hysteresis shows a weaker, slanted response to the magnetic field, indicating a hard axis in-plane.
+
+\paragraph{Sample \#8: Cobalt-Platinum multilayer on Mg(111)}
+The crystallographic alignment of the multilayers and the substrate should enhance the anistropy between in-plane and out-of-plane magnetization. 
+As a result, the out-of-plane easy axis becomes even more pronounced, with larger coercivity and squarer hysteresis compared to the amorphous SiO$_2$ substrate.  
+This indicates that the crystalline order of the substrate further reinforces the perpendicular anisotropy.\\\\
+
+
+The comparison between p-MOKE and l-MOKE shows the transition from in-plane to out-of-plane magnetization when moving from a Co thin film to Co/Pt multilayers.  
+While shape anisotropy dominates in the single Co film, interface-induced anisotropy in the Co/Pt multilayers seems to dominate the magnetic behaviour.  
+The choice of substrate also seems to affects the magnitude of this anisotropy, with crystalline MgO(111) promoting stronger perpendicular magnetic anisotropy than amorphous SiO$_2$. 
