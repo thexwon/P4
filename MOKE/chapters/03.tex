@@ -2,6 +2,32 @@
 
 \chapter{Measurement Procedure}
 \section{General Alignment and Calibration}
+The following steps are necessary for both p-MOKE and l-MOKE after mounting the sample in the appropriate sample holder. 
+
+\subsection{Alignment}
+The beam path needs to be aligned in such a way that the total intensity signal $I_1 + I_2$ is maximised. The corresponding voltage should be around \SI{1}{V}, but not enough to saturate the photodiode output of the MOKE detector. 
+
+In the l-Moke setup the reflected beam can be precisely steered into the entrance of the MOKE detector by adjusting two mirrors. The intensity can be reduced by adjusting the attenuation polarizer (X in figure \ref{fig:setup}), if necessary. 
+
+The p-MOKE beam can be adjusted using the lens mounted on an x-y stage. The beam travels through a beam splitter twice in this setup, so the intensity is naturally reduced compared to the l-MOKE setup. 
+
+\subsection{Calibration}
+For each setup, the linear polarizer P is to be adjusted in such a way that the intensities on both photodiodes are equal, i.e. the signal difference $I_1-I_2$ is close to zero. A deviation from this due to later magnetization of samples is exactly due to the magneto-optic Kerr effect.\\
+To calibrate the provided software, a calibration factor is required. This can be calculated from the signal difference $\Delta S$ resulting from rotation of the polarizer P by an angle of $\Delta\phi$. The resulting calibration factor $\frac{\Delta\phi}{\Delta S}$ can then be entered into the software to translate following signals into their corresponding angles of Kerr rotation. 
+
+
+
 \section{Specific Experimental Tasks}
 \subsection{Task 1 \& 2: Co thin film and Co/Pt Multilayers (p-MOKE and l-MOKE)}
+Record and save a hysteresis loop in p-MOKE and l-MOKE for the samples \#6, \#7 and \#8, i.e. the single cobalt film and cobalt-platinum multilayer samples. From this, the preferred direction of magnetization can be determined (should point out of plane, according to the preparatory material).
+The effect of substrate \& film orientation (to each other?, or of the sample?) on the coercivity and anisotropy needs to be discussed, as well as the effect of the platinum sandwich layers on the magnetic anisotropy.
+(compare single to multilayer to see the effect of the platinum interface. then compare the multilayers to see the effects of the different substrates. MgO orientation is different for single/multilayer!!!)
+
 \subsection{Task 3 \& 4: Fe thin films (l-MOKE)}
+Record and save a high resolution in-plane hysteresis loop for each of samples \#1, \#2 and \#4.
+Then, record multiple hysteresis loops with different angles $\alpha$ between magnetic field  and substrate orientation.(15 - 30 degree steps might be fine?). The hysteresis width $2H_C$ is to be determined directly from the plotted data, the hysteresis loops do not need to be saved (but we should probably save some anyway).
+
+In a plot of $H_{C(\alpha)}$, different in-plane symmetries of the magnetic anisotropy need to be made visible. (maybe different scaling?)
+Discussion of effect of substrate/film orientation on the coercive field.
+Observe \& mention (explain?) a symmetry regarding film orientation and the angular dependence of  $H_{C(\alpha)}$
+Estimate the in-plane orientation of the iron crystal lattice to the MgO crystal lattice for both substrates, samples \#2 and \#4. (should be different! MgO (110) and MgO (100)!)
