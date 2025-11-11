@@ -1,0 +1,2 @@
+for p moke: 1000mdegs, 0.585V difference -> 1709.4 mdgs/V
+for l moke: 1000mdegs, 0.345V difference -> 2898.5 mdgs/V
