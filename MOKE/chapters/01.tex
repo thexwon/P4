@@ -1,4 +1,4 @@
-If not mentioned otherwise, this preparation is based on the MOKE introduction of Physikalisches Institut, Karlsruhe Institute of Technology.
+If not mentioned otherwise, this preparation is based on the preparatory material: MOKE introduction of Physikalisches Institut, Karlsruhe Institute of Technology.
 \chapter{Aim of the Experiment and Theoretical Basis}
 The primary aim of these experiments is to investigate the magnetic properties of various ferromagnetic thin films and multilayers using the Magneto-optic Kerr Effect (MOKE). For this, we will: 
 \begin{itemize}
@@ -8,5 +8,116 @@ The primary aim of these experiments is to investigate the magnetic properties o
 \end{itemize}
 
 \section{Ferromagnetism and Hysteresis Behaviour}
+With free magnetic moments in a material, paramagnetism can occur. This equals a magnetic susceptibility $\chi$ larger than zero. In the case of ferromagnetic non-metals, the susceptibility is given by the Curie-Weiss law 
+\begin{align}
+    \chi = \frac{M}{H} = \frac{C}{T-T_\mathrm{C}}
+\end{align}
+With the magnetization $M$, the field $H$ and the Curie constant
+\begin{align}
+    C = \frac{\mu_0 \mu_\mathrm{B}^2 n g_j^2 J(J+1)}{3 k_\mathrm{B}}
+\end{align}
+Above the Curie temperature $T_\mathrm{C}$, the material exhibits paramagnetic behaviour. Due to interaction between the spins, ferromagnetic behaviour can occur below $T_\mathrm{C}$. This interaction is given in the Heisenberg model as
+\begin{align}
+    H = -\sum_{i \neq j, i > j} \frac{J_{ij}}{\hbar^2}S_i S_j
+\end{align}
+and is also of significance in the paramagnetic regime, where it causes magnetic hysteresis. 
+
+Even though not all of the spins are aligned at high temperatures due to thermal fluctuations, ferromagnetic domains can form. These domains are magnetized in random directions, leading to an overall vanishing ferromagnetic behaviour. However, applying an external field influences the alignment of the domains, leading to a magnetization of the material. If the external field is removed afterwards, due to the intrinsic interaction of the spins, the material is still magnetized more than before, as can be seen in figure \ref{fig:hysteresis_loop}. This effect is called (ferro-)magnetic hysteresis. The hysteresis curve is obtained by applying a field large enough to magnetize the material until saturation. For small applied fields, no hysteresis is observed. Values of interest on this curve are:
+\begin{itemize}
+    \item The satuation magnetization $M_\mathrm{S}$
+    \item The remanence / remanent magnetization $M_\mathrm{r}$ at $H=0$
+    \item The coercivity or coercive field $H_\mathrm{C}$ at $M=0$
+    \item The demagnetizing curve from $H=0$ to $H=H_\mathrm{C}$
+\end{itemize}
+
+Depending on coercivity, materials can be classified as hard or soft magnets, where 
+\begin{itemize}
+    \item Soft magnets have $\mu_0 H_\mathrm{C} < \SI{1}{mT}$
+    \item Hard magnets have $\mu_0 H_\mathrm{C} > \SI{100}{mT}$   
+\end{itemize}
+
+Depending on physical application, either one can be of use. The magnetization energy per unit volume is given by
+\begin{align}
+    E_\mathrm{V} = \int_{M_1}^{M_2} H \mathrm{d}M
+\end{align}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{MOKE/include/A-schematic-illustration-of-hysteresis-in-magnetic-materials-The-magnetization-M-lags.png}
+    \caption[Hysteresis loop for different magnets]{Hysteresis loop for different magnets. Figure taken from ref. \cite{Balakrishna}}
+    \label{fig:hysteresis_loop}
+\end{figure}
+
+The 3d transition metals, namely cobalt (Co), iron (Fe) and nickel (Ni) exhibit strong ferromagnetism. Their 4s electrons can be regarded as free, since they are completely delocalized. The magnetic properties are mostly determined by the 3d electrons. Due to exchange hole interaction and other interactions, ferromagnetism can occur. This can be described by the Stoner model and ferromagnetism can be observed if the Stoner criterion is fulfilled:
+\begin{equation}
+    \frac{1}{2} U D(E_\mathrm{F}) > 1
+\end{equation}
+With the potential energy $U$ and the density of states at the Fermi level $D(E_\mathrm{F})$.
+
+
+
 \section{Magnetic Anisotropy}
+Since the exchange energy between the spins is a scalar product and is invariant under rotation and translation transformations. However, due to various mechanisms breaking the symmetry of the system, an anisotropy in the magnetization can occur. Depending on the source, these anisotropies can be classified:
+\begin{itemize}
+    \item \textbf{Magnetocristalline anisotropy}\\
+    Due to the symmetric crystal structure
+    \item \textbf{Magnetoelastic anisotropy}\\
+    Due to mechanic stress and resulting deformation of the crystal
+    \item \textbf{Shape anisotropy}\\
+    Due to the atoms not being perfectly spherical
+    \item \textbf{Exchange anisotropy}\\
+    Due to surface interactions between ferromagnetic and antiferromagnetic materials
+\end{itemize}
+Introducing the demagnetizing tensor $N_\mathrm{d}$, the magnetostatic energy per unit volume can be written as
+\begin{align}
+    E_\mathrm{ms} = \frac{\mu_0}{2} N_\mathrm{d} M_\mathrm{S}^2
+\end{align}
+
+
+
 \section{Magneto-optic Kerr Effect (MOKE)}
+When a magnetized surface reflects light, polarization and reflected intensity may be altered. Like the Faraday effect, the magneto-optic Kerr effect describes the interaction of magnetic material with light. However, while the Faraday effect describes transition, the Kerr effect describes reflection from a surface. Both arise due to off-diagonal elements of the dielectric tensor
+\begin{align}
+    \epsilon = \epsilon_0 \begin{pmatrix}
+        1 & i Q_z & -i Q_y \\
+        -i Q_z & 1 & -i Q_x\\
+        i Q_y & -i Q_x & 1
+    \end{pmatrix}
+\end{align}
+with the Voigt vector
+\begin{align}
+    Q = (Q_x, Q_y, Q_z)
+\end{align}
+This is because the speed of light in the material $v_c$ depends on permittivity and magnetic permeability:
+\begin{align}
+    v_c = \frac{1}{\sqrt{\epsilon \mu}}
+\end{align}
+
+\begin{figure}[tb!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{MOKE/include/kerr_angle_def.png}
+    \caption{Definition of Kerr rotation angle $\theta_\mathrm{K}$ and Kerr ellipticity $\xi_\mathrm{K}$}
+    \label{fig:kerr_angle_def}
+\end{figure}
+
+Thus the speed of light is dependent on direction in the material. The resulting changes are described by the Kerr rotation angle
+\begin{align}
+    \phi_\mathrm{K} = \frac{i n_0 Q}{n_0^2 - 1}
+\end{align}
+where $|n_0| = \sqrt{\epsilon_0}$. The definition of the Kerr angle is illustrated in Fig. \ref{fig:kerr_angle_def}.
+
+
+
+It can also be described with the conductivity in the respective directions:
+\begin{align}
+    \phi_\mathrm{K} = \frac{-\sigma_{xy}}{\sigma_{xx} \sqrt{1 + \frac{4 \pi i}{\omega} \sigma_{xx}}}
+\end{align}
+
+Due to the exchange splitting $\Delta_\mathrm{ex} \approx 1 - \SI{2}{eV}$ in ferromagnetic materials, the spin up and spin down states sit at different energies and are differently populated. Also, the degeneracy of the d-orbitals is lifted due to spin orbit coupling, splitting their energies $\Delta_\mathrm{SO}$ by tens of \si{meV}. For the transitions between the d- and p-orbitals, the selection rules for circularly polarized light are given by
+\begin{align}
+    \Delta l = \pm 1\\
+    \Delta m_l = \pm 1
+\end{align}
+Overall, this results in the absorption spectra being dependent on the polarization of the light. In a paramagnet, the absorption energies for circular polarized light of one direction are shifted up and down by the same magnitude, namely $\Delta_\mathrm{SO}$ for spin up and down compared to the other polarization direction. In a ferromagnet, no shift is observed. Instead, the spin-up and spin-down transitions are in this case excited by light of the other polarization direction respectively. 
+
+
