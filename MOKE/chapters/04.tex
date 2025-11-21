@@ -26,7 +26,7 @@ For the Cobalt-Platinum multilayers, the easy axis points out of the plane, as s
     \label{fig:task12}
 \end{figure}
 
-From the hysteresis loops, the coercive fields $H_c$  and saturation Kerr rotations $\theta_K^{\mathrm{sat}}$ were determined for each geometry (see Table~\ref{tab:task12}), by averaging of the determined value whenever possible.  
+From the hysteresis loops, the coercive fields $H_c$  and saturation Kerr rotations $\theta_K^{\mathrm{sat}}$ are determined for each geometry (see Table~\ref{tab:task12}), by averaging of the read values whenever possible.  
 These quantities allow a direct comparison of the magnetic anisotropy and the influence of the substrate.
 
 
@@ -70,3 +70,52 @@ This indicates that the crystalline order of the substrate further reinforces th
 The comparison between p-MOKE and l-MOKE shows the transition from in-plane to out-of-plane magnetization when moving from a Co thin film to Co/Pt multilayers.  
 While shape anisotropy dominates in the single Co film, interface-induced anisotropy in the Co/Pt multilayers seems to dominate the magnetic behaviour.  
 The choice of substrate also seems to affects the magnitude of this anisotropy, with crystalline MgO(111) promoting stronger perpendicular magnetic anisotropy than amorphous SiO$_2$. 
+
+
+
+\section{Task 3 \& 4: Fe Thin Films (l-MOKE, Anisotropy)}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{MOKE/include/task4_energy_fit_offset.png}
+    \caption{Polar plot of coersive field over sample orientation angle (black dots). The energy-based fit (red line) shows a weak uniaxial anisotropy associated with the [100] direction superimposed on the otherwise 4-fold symmetric cubic anisotropy.}
+    \label{fig:polar_plot}
+\end{figure}
+
+To investigate the magnetocristalline anisotropy (see sec. \ref{sec:anisotropy}) of Fe(100), sample \#4 is used. It consists of Fe(100) rotated by 45° in MgO(100). L-MOKE measurements are carried out at different angles in 30° steps to determine the angular dependence of the Kerr-angle. Hysteresis loops at each angle are evaluated by eye to determine the respective coercive field. A plot of coercive field $H_\mathrm{c}$ over the orientation angle can be seen in Fig. \ref{fig:polar_plot}. 
+\subsection*{Fit Model}
+Additionally, a fit model is used to describe the somewhat symmetric behaviour. Due to the bcc structure of the Fe(100) lattice, a cubic anisotropy field is expected. A superimposed uniaxial anisotropy can also be expected for the Fe/MgO film \cite{PhysRevB.80.094416}. To model the combined field, one can assume the coersive field $H_\mathrm{c}$ to be proportional to the magnetic free energy of the film, which in turn is given by \cite{10.1063/1.2834448, PhysRevLett.90.107201, Won_2013, Bac2015}
+
+\begin{equation}
+H_\mathrm{c} = \frac{E}{M} = \frac{1}{8}H_\mathrm{cubic} \cos^2(2(\varphi - \varphi_0)) + \frac{1}{2}H_\mathrm{uniaxial}^{[100]} \sin^2\left(\varphi - \varphi_0 - \frac{3\pi}{4}\right) - H \cos(\varphi - \varphi_H) + H_\mathrm{offset}
+\end{equation}
+
+with $H_\mathrm{cubic}$ being the cubic anisotropy field, $H_\mathrm{uniaxial}$ the uniaxial anisotropy field associated with the [100] direction, $\varphi_H$ the angle of the applied magnetic field, and $\varphi$ the magnetization direction within the film. An offset of the field $H_\mathrm{offset}$ is taken into account. Since the absolute orientation of the sample is unknown, an offset angle $\varphi_0$ is introduced. The data as well as the fit to the aforementioned function are depicted in Fig. \ref{fig:polar_plot}. 
+
+\begin{table}[b]
+    \centering
+    \begin{tabular}{c  c  c  c  c}
+        \toprule
+        $H_\mathrm{cubic}$ & $H^{[100]}_\mathrm{uniaxial}$ & $H_\mathrm{offset}$ & $\varphi_0$ & $R^2$ \\
+        \midrule
+        \SI{77.7}{mT} & \SI{-7.4}{mT} & \SI{9.7}{mT} & -11.9° & 0.41\\
+        \bottomrule
+    \end{tabular}
+    \caption{Fit results for the energy-based fit of the magnetic anisotropy.}
+    \label{tab:polar_fit_results}
+\end{table}
+
+\subsection*{Fit Results and Discussion}
+The resulting fit parameters and goodness of fit $R^2$ can be seen in tab. \ref{tab:polar_fit_results}. The negative result for the uniaxial anisotropy $H^{[100]}$ is physically questionable. In the same manner, the cubic term is way larger than what would be expected from the measured values. Considering the low goodness of the fit ($R^2 = 0.41$), these highly questionable results are logical. The discrepancy between model and data could stem from several factors and sources. First of all, the model might not be adequate to describe the specific material film at hand. Given the data which doesn't exhibit a clear symmetry or pattern, the model was chosen based mainly on flexibility rather than accurateness for the specific case at hand. Secondly, the comparatively low angular resolution (namely, 30° steps) leads to difficulties when fitting the model. Thirdly, the model seems to be insensitive to moderate variation of some of the parameters. This, in addition with the low number of points, causes highly unreliable fit results. Overall, more measurements points and the choice of a different, more adequate model could allow for more reliable fit results. 
+
+
+
+
+
+
+
+
+
+
+
+

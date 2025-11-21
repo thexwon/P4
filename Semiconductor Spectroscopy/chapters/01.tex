@@ -1,3 +1,108 @@
-\chapter{Ziel des Versuchs, Theoretische Grundlagen}
-\section{Abschnitt}
-\subsection{Unterabschnitt}
+If not mentioned otherwise, this preparation is based on the preparatory material: Semiconductor Spectroscopy by Karlsruhe School of Optics
+and Photonics, Faculty of Physics, Universität Karlsruhe.
+\chapter{Aim of the Experiment and Theoretical Basis}
+\section{Aim of the Experiment}
+The aim of this experiment is to investigate the optical properties of various semiconductor systems using transmission and absorption spectroscopy. Through the analysis of transmission spectra, absorption coefficients and interference patterns, key parameters such as band gaps, exciton binding energies, and quantum confinement effects in low-dimensional semiconductor structures are determined. The experiment covers semiconductors of different dimensionalities, allowing a comparison of dimensionality effects on electronic and optical properties.
+
+\section{Theoretical Basis}
+\subsection{Propagation of Light in Matter}
+
+The interaction of light with matter is governed by its complex optical properties. When an electromagnetic wave propagates through a medium, its wave vector becomes complex, described by the complex index of refraction $\tilde{n}(\omega)$ :
+\[
+\tilde{n}(\omega) = n(\omega) + i\kappa(\omega),
+\]
+where $n(\omega)$ is the refractive index and $\kappa(\omega)$ is the extinction coefficient. This leads to a damped plane wave solution for the electric field:
+\[
+\boldsymbol{E}(\boldsymbol{r}, t) = \boldsymbol{E}_0 e^{i\left(\frac{\omega}{c}n(\omega)\boldsymbol{k}\cdot\boldsymbol{r} - \omega t\right)} e^{-\frac{\omega}{c}\kappa(\omega)\boldsymbol{k}\cdot\boldsymbol{r}}.
+\]
+The intensity $I$ of the light, being proportional to $|\boldsymbol{E}|^2$, decays exponentially as described by Lambert-Beer's law:
+\begin{equation*}
+I(z) = I_0 e^{-\alpha(\omega) z}, \quad \text{with} \quad \alpha(\omega) = \frac{2\omega}{c}\kappa(\omega) = \frac{4\pi}{\lambda}\kappa(\omega).
+\end{equation*}
+Here, $\alpha(\omega)$ is the frequency-dependent absorption coefficient, quantifying how strongly the material absorbs light.
+\subsection{Transmission and Reflection at Interfaces}
+
+For a light beam incident on a semiconductor, a portion is reflected at the surface. The reflectivity $R$ for normal incidence at an interface between air ($n_1 \approx 1$) and a semiconductor with complex index $\tilde{n}$ is given by:
+\begin{equation*}
+R(\omega) = \frac{(n(\omega)-1)^2 + \kappa^2(\omega)}{(n(\omega)+1)^2 + \kappa^2(\omega)}.
+\end{equation*}
+For a plane-parallel slab of thickness $d$, the total transmission $\hat{T}$ must account for multiple internal reflections. If the light is incoherent or the sample is thick ($d \gg l_c$, the coherence length), the transmitted intensity is found by summing intensities:
+\begin{equation*}
+T(\omega) \approx \frac{(1-R(\omega))^2 e^{-\alpha(\omega)d}}{1 - R^2(\omega)e^{-2\alpha(\omega)d}}.
+\end{equation*}
+In the common case of moderate to strong absorption, multiple reflections are negligible, and the formula simplifies to:
+\begin{equation*}
+T(\omega) \approx [1-R(\omega)]^2 e^{-\alpha(\omega)d}.
+\end{equation*}
+
+
+\subsection{Fabry-Perot interferences}
+In thin, plane-parallel semiconductor samples with low absorption and smooth surfaces, the multiple reflected light waves can interfere coherently, forming a Fabry-Perot etalon. The transmission $T$ exhibits characteristic oscillations as a function of wavelength or photon energy. For a lossless slab with surface reflectivity $R$, the transmission is given by the Airy function:
+\begin{equation*}
+\hat{T} = \frac{1}{1 + F \sin^2(\delta)},
+\end{equation*}
+where the phase accumulated in one round-trip is $\delta = n(\omega) k d = 2\pi n(\omega) d / \lambda$, and $F = 4R/(1-R)^2$ is the coefficient of finesse. Constructive interference occurs when the condition
+\begin{equation}
+2 n(\omega) d = m \lambda, \quad m \in \mathbb{Z}
+\end{equation}
+is fulfilled. These Fabry-Perot fringes can be used to accurately determine the sample thickness $d$ or the dispersion of the refractive index $n(\omega)$.
+
+
+\subsection{Electronic Band Structure and Optical Transitions}
+
+In a crystalline semiconductor, the periodic lattice potential leads to the formation of energy bands. The key property for optics is the band gap $E_g$, which separates the fully occupied valence band from the empty conduction band at zero temperature.
+
+The interaction of light with electrons in the solid can be treated in the weak-coupling regime using time-dependent perturbation theory. The transition rate for a photon to excite an electron from the valence band (state $i$) to the conduction band (state $f$) is given by Fermi's golden rule:
+\begin{equation}
+W_{fi} = \frac{2\pi}{\hbar} \left| H_{fi}^{(1)} \right|^2 D(E),
+\end{equation}
+where $H_{fi}^{(1)}$ is the transition matrix element and $D(E)$ is the joint density of states. In the dipole approximation, the relevant matrix element is $\left| \langle f | \boldsymbol{p} | i \rangle \right|^2$, which is proportional to $\left| \langle f | \boldsymbol{r} | i \rangle \right|^2$.
+
+If the maximum of the valence band and the minimum of the conduction band occur at the same point in the Brillouin zone (at $\boldsymbol{k}=0$), the semiconductor has a direct band gap (e.g., GaAs, CdS, ZnO). In this case, optical band-to-band transitions are strong because they can occur without a change in the electron's crystal momentum, as the photon momentum $\hbar k$ is negligible.
+
+In indirect band gap semiconductors (e.g., Si, Ge), the band extrema are at different $\boldsymbol{k}$-points. A direct optical transition is forbidden by crystal momentum conservation, and the transition must be assisted by a phonon to provide the necessary momentum, making it much weaker.
+
+\subsection{Density of States}
+
+The density of states $D(E)$ is a fundamental quantity that counts the number of available electronic states per unit energy and volume. For a free electron gas with a parabolic dispersion $E(\boldsymbol{k}) = \hbar^2 k^2 / (2m^*)$, $D(E)$ depends on the system's dimensionality $d$:
+\begin{equation}
+D(E) \propto
+\begin{cases}
+(E - E_c)^{1/2}, & \text{3D (bulk)},\\
+\sum_n \Theta(E - E_n), & \text{2D (quantum well)},\\
+\sum_{n,m} (E - E_{n,m})^{-1/2}, & \text{1D (quantum wire)},\\
+\sum_{n,m,l} \delta(E - E_{n,m,l}), & \text{0D (quantum dot)},
+\end{cases}
+\end{equation}
+where $E_c$ is the conduction band edge, $\Theta$ is the Heaviside step function, and $E_n$, $E_{n,m}$, $E_{n,m,l}$ are the quantized energy levels in 2D, 1D, and 0D systems, respectively. This dimensional dependence directly influences the shape of the absorption spectrum.
+\subsection{Excitons}
+\cite{SemiconductorSpec} When an electron is excited across the band gap, it leaves behind a positively charged 
+hole. Their mutual Coulomb attraction can bind them into a neutral, hydrogen-like quasiparticle called an exciton. There are two main types:
+\begin{itemize}
+    \item \textbf{Wannier-Mott Excitons:} Characteristic of inorganic semiconductors, these have a large radius, small binding energy, and are well described by a hydrogen model. The energy levels are given by:
+    \begin{equation}
+    E_X(n, \boldsymbol{K}) = E_g - \frac{R_y^*}{n^2} + \frac{\hbar^2 K^2}{2M}, \quad \text{with} \quad R_y^* = \frac{\mu e^4}{2\hbar^2 (4\pi \varepsilon_0 \varepsilon_r)^2} = 13.6\,\text{eV} \cdot \frac{\mu/m_0}{\varepsilon_r^2}.
+    \end{equation}
+    Here, $R_y^*$ is the effective Rydberg energy, $\mu$ is the reduced electron-hole mass, $\varepsilon_r$ is the static dielectric constant, $M = m_e + m_h$ is the total mass, and $\boldsymbol{K}$ is the center-of-mass momentum of the exciton.
+    
+    \item \textbf{Frenkel Excitons:} Found in organic semiconductors and materials with strong localization, these have a small radius and large binding energy.
+\end{itemize}
+
+Excitons give rise to sharp, discrete absorption lines below the band gap energy $E_g$. They dominate the low-temperature optical spectra of direct-gap semiconductors like GaAs, CdS, and Cu$_2$O.
+
+\subsection{Quantum Wells and Quantum Dots}
+
+\cite{SemiconductorSpec} Reducing the dimensionality of a semiconductor structure leads to quantum confinement, which drastically alters its electronic and optical properties.
+
+A Quantum Well (QW) confines charge carriers in one dimension. This quantization leads to the formation of discrete energy subbands in the conduction and valence bands. The energy levels for an infinite potential well of width $L_z$ are:
+\begin{equation}
+E_n = E_c + \frac{\hbar^2 \pi^2 n^2}{2m^* L_z^2}, \quad n=1,2,3,\dots
+\end{equation}
+Optical transitions occur between electron and hole subbands with the same quantum number $n$. Excitonic effects are strongly enhanced in QWs due to the confinement, leading to well-defined exciton resonances observable even at room temperature.\\
+
+A Quantum Dot (QD) provides confinement in all three spatial dimensions, resulting in a fully discrete, atom-like density of states. The energy levels depend on the dot's size and shape. For a rectangular box with dimensions $L_x, L_y, L_z$:
+\begin{equation}
+\label{dot_energy}
+E_{n_x n_y n_z} = E_c + \frac{\hbar^2 \pi^2}{2m^*} \left( \frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} + \frac{n_z^2}{L_z^2} \right).
+\end{equation}
+A reduction in the dot size leads to a blue shift of the absorption and emission spectra, a phenomenon known as the quantum size effect.

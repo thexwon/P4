@@ -1,1 +1,49 @@
-\chapter{Experimenteller Aufbau}
+\chapter{Experimental Setup and Measurement principle}
+
+
+
+\section{Setup and Measurement Configuration}
+The measurement setup is depicted in Fig. \ref{fig:spectroscopy_setup} as a schematic. It comprises of the following components:
+\begin{itemize}
+    \item A \textbf{halogen lamp} is used in the spectrometer system as a broadband light source covering the wavelength range from approximately \SI{400}{nm} to \SI{800}{nm}. 
+
+    \item \textbf{Polarization} control is implemented via adjustable polarizers, enabling investigation of polarization-dependent optical transitions, particularly for uniaxial crystals such as CdS.
+
+    \item A \textbf{cryostat sample holder} is used for temperature-dependent measurements. When performing low-temperature investigations at \SI{77}{K} using liquid nitrogen, a cooling fan must be activated before cryogen filling to prevent water condensation at the cryostat neck. Spectra are recorded only after absorption lines stop shifting spectrally, indicating thermal equilibrium.
+
+    \item A \textbf{wavelength-dependent detector} analyzes the light which is directed through the sample, and the transmitted intensity is recorded.
+\end{itemize}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Semiconductor Spectroscopy/include/spectroscopy_setup.png}
+    \caption{Schematic representation of the measurement setup. Components from left to right: Halogen lamp, polarizer, cryostat with sample, lens, detector.}
+    \label{fig:spectroscopy_setup}
+\end{figure}
+
+\section{Reference and Background Measurements}
+
+Background and reference spectra must be remeasured before each measurement series, as both the detector sensitivity and the spectral characteristics of the halogen lamp drift with time. 
+
+\section{Sample Specifications}
+
+Five semiconductor samples of varying dimensionality are investigated:
+
+\begin{enumerate}
+    \item Glass rod doped with CdS/CdSe colloids (size gradient along rod axis)
+    \item Thin Cu\(_2\)O crystal
+    \item 60\(\times\) GaAs/Al\(_{0.3}\)Ga\(_{0.7}\)As Multiple Quantum Well (MQW) structure
+    \item CdS crystal
+    \item Thick Cu\(_2\)O crystal
+\end{enumerate}
+
+\section{Observable Spectral Features}
+
+In transparent spectral regions where absorption is minimal, coherent interference of multiply-reflected light waves generates characteristic Fabry-Pérot fringes. These oscillations follow the Airy function and allow determination of sample thickness and refractive index dispersion.
+
+For direct band-gap semiconductors, the primary observable is the exciton absorption series. Sharp absorption lines correspond to principal quantum numbers $n_B = 1, 2, 3, \ldots$, revealing band-gap energy, exciton binding energy, and effective translational mass.
+
+For quantum well structures (2D confinement), the density of states becomes step-like, producing distinct exciton resonances. Heavy-hole and light-hole valence band splitting generates resolvable resonance pairs.
+
+For quantum dots (0D confinement) embedded in a glass matrix, inhomogeneous broadening converts the idealized density of states into a broadened absorption band. The absorption edge shifts to shorter wavelengths (blue shift) with decreasing crystallite radius. This is called the quantum size effect.
+
