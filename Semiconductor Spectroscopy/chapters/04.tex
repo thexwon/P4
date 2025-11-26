@@ -18,13 +18,185 @@ Fig.\ref{fig:ss_ex0} depicts the spectrum of a fluorescent light tube. It consis
 
 
 \section{Exercise 1: Measurement of Colloid Radius}
-For this exercise, the size of the colloids in the CdS/CdSe glass rod sample is determined by means of absorption edge shift. Depending on the colloid size, the absorption energy and wavelength are shifted. This shift can be described by eq. \ref{dot_energy}. By rearranging the formula, the minimum colloid radius is given by
+
+For this exercise, the minimal size of the colloids in the CdS/CdSe glass rod sample is determined by means of absorption edge shift. Depending on the colloid size, the absorption energy and wavelength are shifted. This shift can be described by eq. \ref{dot_energy}. By rearranging the formula, the minimum colloid radius is given by
 
 \begin{equation}
     r_\mathrm{min} = \sqrt{\frac{h}{8 m c (\frac{1}{\lambda_\mathrm{blue}} - \frac{1}{\lambda_\mathrm{red}})}}
 \end{equation}
 
-This yields TODO
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Semiconductor Spectroscopy/ss_ex1.jpg}
+    \caption{Transmission spectra for different sections of the CdS/CdSe glass rod sample. The wavelengths of the absorption edges are marked for analysis.}
+    \label{fig:ss_ex1}
+\end{figure}
+
+Transmission spectra for different sections of the sample are depicted in Fig. \ref{fig:ss_ex1}. The lowest and highest absorption edges are given by
+$$\lambda_\mathrm{blue} = 460 \pm \SI{10}{nm}$$
+$$\lambda_\mathrm{red} = 616 \pm \SI{10}{nm}$$
+This yields 
+$$r_\mathrm{min} = 1.66 \pm \SI{0.08}{nm}$$
+which is in the expected range for the colloid radius of a few nanometers.
+
+
 
 \section{Exercise 2: Measurement of Layer Thickness}
-In this exercise, the layer thickness of the CdS sample is analyzed. To do so, a polarizer is used between the sample and detector. It was also used for the reference spectrum. Two spectra with a relative polarization angle of 90° were recorded. 
+In this exercise, the layer thickness of the CdS sample is analyzed. To do so, a polarizer is used between the sample and detector. It was also used for the reference spectrum. Two spectra with a relative polarization angle of 90° were recorded, resulting in one of maximum and one of minimum transmission. These spectra are depicted in Fig. \ref{fig:ss_ex2_spectra}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Semiconductor Spectroscopy/ss_ex2_spectra.jpg}
+    \caption{Transmission spectra for two polarizations. Absorption edges and estimated peaks are marked for later evaluation.}
+    \label{fig:ss_ex2_spectra}
+\end{figure}
+
+The positions of the peaks in the spectra can be used to fit the thickness of the CdS crystal. To do so, the refractive index $n(\lambda)$ is needed. It is given by
+
+\begin{equation}
+    n(\lambda) = 1.94 \sqrt{1 + \frac{\dfrac{4696}{2\pi c}}{\left(\dfrac{1}{390}\right)^2 - \left(\dfrac{1}{\lambda}\right)^2}}
+\end{equation}
+
+Using this, linear fits can be performed for both polarizations. The fits and their respective results are depicted in Fig. \ref{fig:ss_ex2_linear_fits}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Semiconductor Spectroscopy/ss_ex2_linear_fits.jpg}
+    \caption{Linear fits and extracted thickness parameters for maximum and minimum transmission spectra.}
+    \label{fig:ss_ex2_linear_fits}
+\end{figure}
+
+The two results can be combined to obtain an averaged value for the thickness of 
+
+$$d = 810.8 \pm \SI{16.3}{nm}$$
+
+From the absorption edges, the energy gaps too can be estimated. Since the edges are located at
+
+$$\lambda_\mathrm{maxtrans} = 508 \pm \SI{3}{nm}$$
+$$\lambda_\mathrm{mintrans} = 511 \pm \SI{3}{nm}$$
+
+yielding $E_g$ energies of
+
+$$E_\mathrm{g, maxtrans} = 2.441 \pm \SI{0.014}{eV}$$
+$$E_\mathrm{g, mintrans} = 2.426 \pm \SI{0.014}{eV}$$
+
+Combining these into one result gives 
+
+$$E_\mathrm{g} = 2.433 \pm \SI{0.010}{eV}$$
+
+
+
+\section{Exercise 3: Thickness of GaAs/AlGaAs Quantum Wells}
+Transmission spectra of the  GaAs/AlGaAs multiple quantum wells sample were recorded at room temperature and, using liquid nitrogen cooling, at 77K. The spectra are depicted in Fig. \ref{fig:ss_ex3}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Semiconductor Spectroscopy/ss_ex3.jpg}
+    \caption{Transmission spectra at room temperature and 77K. Absorption peaks are marked with black lines. A temperature-dependent shift is visible.}
+    \label{fig:ss_ex3}
+\end{figure}
+
+The absorption peaks are located at
+
+$$\lambda_\mathrm{lh} = 773 \pm \SI{3}{nm}$$
+$$\lambda_\mathrm{hh} = 785 \pm \SI{3}{nm}$$
+
+with the corresponding energies
+
+$$E_\mathrm{lh} = 1.60 \pm \SI{0.01}{eV}$$
+$$E_\mathrm{lh} = 1.58 \pm \SI{0.01}{eV}$$
+
+The respective energies $E_\mathrm{lh}$ and $E_\mathrm{hh}$ as well as $E_\mathrm{g}$ can be used to calculate the thickness of the quantum wells. It is given by
+
+\begin{equation}
+    l = \frac{h}{2\sqrt{2}} \sqrt{\frac{\dfrac{m_\text{hh}}{m_\text{lh}} - \dfrac{m_\text{lh}}{m_\text{hh}}}{(E_\text{lh} - E_g) m_\text{hh} - (E_\text{hh} - E_g) m_\text{lh}}}
+\end{equation}
+
+with
+
+\begin{align*}
+E_g &= 1.511 \, \text{eV} \\
+\mu_\text{lh} &= 0.087 \cdot m_e = 0.79 \times 10^{-31} \, \text{kg} \\
+\mu_\text{hh} &= 0.48 \cdot m_e = 4.37 \times 10^{-31} \, \text{kg}
+\end{align*}
+
+Thus, the size of the quantum wells is
+
+$$l = 7.20 \pm \SI{0.28}{nm}$$
+
+
+
+\section{Exercise 4: Cu$_\mathbf{2}$O Crystals}
+
+Absorption spectra of sample \#2 and \#4, i.e. thin and thick Cu$_\mathbf{2}$O crystals were recorded at a temperature of \SI{77}{K}. The recorded spectra, shown in figure \ref{fig:ss_ex4_thin} and \ref{fig:ss_ex4_thick}, allow the extraction of the respective exciton energies, tabulated in table \ref{tab:ss_ex4_table}. Using the formula 
+\begin{equation*}
+    E_{\text{exciton}} = E_g - \frac{E_b}{n^2}
+\end{equation*}
+where $E_\text{exciton}$ is the exciton energy, $E_g$ the band-edge energy, $E_b$ the binding energies and $n$ the principal quantum number,
+the binding and band-edge energy can be determined for both samples. 
+
+
+
+\begin{table}[]
+    \centering
+    \caption{Wavelength and energy of each measured exciton state for each sample. The 1s-exciton energy is determined by the mean of the determined edges, using half it's width as the uncertainty.}
+    \begin{tabular}{cccc}\toprule
+    
+       sample & exciton state & $\lambda$ in nm & energy in eV \\\midrule
+        thin & 2p &$ 582 \pm 3$ & $2.130 \pm 0.011$\\ 
+            & 3p & $578 \pm 3$ & $2.145 \pm 0.011$\\ 
+         thick & 1s & $617.5 \pm 4.5$ & $2.008 \pm 0.015$\\ 
+           & 2p & $583 \pm 3$ & $2.127 \pm 0.011$\\ 
+            & 3p & $578 \pm 3$ & $2.145 \pm 0.011$\\
+        \bottomrule
+    \end{tabular}
+    
+    \label{tab:ss_ex4_table}
+\end{table}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Semiconductor Spectroscopy/ss_ex4_thin_cold.jpg}
+    \caption{Absorption spectrum of the thin Cu$_\mathbf{2}$O crystal sample at \SI{77}{Kelvin}. The 2p- and 3p-excitons are indicated by the red and green dashed lines.}
+    \label{fig:ss_ex4_thin}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{Semiconductor Spectroscopy/ss_ex4_thick_cold.jpg}
+    \caption{Absorption spectrum of the thick Cu$_\mathbf{2}$O crystal sample at \SI{77}{Kelvin}. The 2p- and 3p-excitons are indicated by the red and green dashed lines. The 1s-exciton is assumed to lie within the black dashed lines.}
+    \label{fig:ss_ex4_thick}
+\end{figure}
+
+
+The energy difference of two exciton states and their respective quantum numbers yield for the thin sample: 
+\begin{equation*}
+    E_g(E_{3p},E_{2p}) = \frac{9}{5}E_{3p} - \frac{4}{5}E_{2p} = 2.145\pm\SI{0.011}{eV} = E_{g\text{,thin}}
+\end{equation*}
+\begin{equation*}
+     E_b(E_{3p},E_{2p}) = \frac{1}{\frac{1}{4}-\frac{1}{9}}\cdot(E_{3p} -E_{2p}) = 0.1061\pm \SI{0.1126}{eV} = E_{b\text{,thin}}
+\end{equation*}
+
+For the thick sample, there are multiple options to determine $E_g$ and $E_b$.
+\begin{equation*}
+    E_g(E_{2p},E_{1s}) = \frac{4}{3}E_{2p} - \frac{1}{3}E_{1s} = 2.166\pm\SI{0.015}{eV}
+\end{equation*}
+\begin{equation*}
+     E_b(E_{2p},E_{1s}) = \frac{4}{3}\cdot(E_{2p} -E_{1s}) =  0.1584\pm \SI{0.0244}{eV}
+\end{equation*}
+
+
+
+\begin{equation*}
+    E_g(E_{3p},E_{2p}) = \frac{9}{5}E_{3p} - \frac{4}{5}E_{2p} = 2.160\pm\SI{0.022}{eV}
+\end{equation*}
+\begin{equation*}
+     E_b(E_{3p},E_{2p}) = \frac{1}{\frac{1}{4}-\frac{1}{9}}\cdot(E_{3p} -E_{2p}) = 0.1325\pm \SI{0.1124}{eV}
+\end{equation*}
+
+which can be averaged to 
+\begin{equation*}
+   E_{g\text{,thick}} =  2.163\pm\SI{0.011}{eV}
+\end{equation*}
+\begin{equation*}
+     E_{b\text{,thick}} = 0.1454\pm \SI{0.0523}{eV}
+\end{equation*}
+These results match the expectation that the band-edge energy of a semiconductor is of a few electronvolts.
