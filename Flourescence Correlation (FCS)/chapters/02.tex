@@ -30,6 +30,7 @@ In fluorescence spectroscopy, it quantifies characteristic time constants of mol
 
 
 \section{Brownian Molecular Motion and Diffusion Model Function}
+\label{section:fcs_brownian}
 Molecules undergo random walk driven by thermal energy, with mean square displacement $\langle r^2 \rangle = 6Dt$, where $D$ is the diffusion coefficient. The characteristic diffusion time through the focal volume is $\tau_D = r_0^2/(4D)$. For freely diffusing molecules, the autocorrelation function thereby becomes
 
 \begin{equation}
@@ -51,10 +52,10 @@ where $T$ is the triplet state fraction and $\tau_T$ is the triplet relaxation t
 \section{Diffusion Coefficient, Concentration and the Stokes-Einstein Relation}
 The Stokes-Einstein relation connects diffusion to molecular size:
 \begin{equation}
-D = \frac{k_B T}{6\pi \eta R_h}
+D = \frac{k_B T}{6\pi \eta R_H}
 \end{equation}
-where $k_B$ is Boltzmann's constant, $T$ is temperature, $\eta$ is viscosity, and $R_h$ is the hydrodynamic radius. Smaller particles diffuse faster (shorter $\tau_D$) while larger particles diffuse slower. Molecular concentration is determined via 
+where $k_B$ is Boltzmann's constant, $T$ is temperature, $\eta$ is viscosity, and $R_H$ is the hydrodynamic radius. Smaller particles diffuse faster (shorter $\tau_D$) while larger particles diffuse slower. Molecular concentration (in \SI{}{\frac{mol}{L}}) is determined via 
 
-$$c = 1/(G(0) \cdot V_{\text{eff}})$$
+$$c = 1/(G(0) \cdot N_\text{A} \cdot V_{\text{eff}})$$
 
-where $V_{\text{eff}} = \pi^{3/2} r_0^2 z_0$ is the effective focal volume, enabling quantitative absolute concentration measurements.
+where $N_\text{A}$ is Avogadro's number and $V_{\text{eff}} = \pi^{3/2} r_0^2 z_0$ the effective focal volume, enabling quantitative concentration measurements.
