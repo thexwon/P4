@@ -38,18 +38,90 @@ This value will later be compared to the one determined via estimation of micros
 
 
 \section{Task 2: Estimation of Microscope Resolution Based on Immobilized Fluorescent Beads}
+For this task, immobilized fluorescent beads are looked upon. Their intensity profiles - in this case across a horizontal line - are analyzed to determine the microscope resolution. This is done by fitting the intensity to a Gaussian model:
+\begin{align}
+    I(x) = I_0 \cdot e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{align}
+with the intensity at point $x$ being $I(x)$, the maximum intensity $I_0$, the standard deviation $\sigma$ and the maximum position $\mu$. The standard deviation $\sigma$ is also related to the full width at maximum FWHM via
+$$\omega_\text{fwhm} = \sqrt{8 \text{ ln}(2)} \cdot \sigma$$
+Using this, the lateral resolution $\omega_\mathrm{lat}$ can be determined via
+\begin{equation}
+\label{eq:lateral_resolution}
+    \omega_\mathrm{lat} = \sqrt{\omega_\mathrm{fwhm}^2 - \omega_\mathrm{bead}^2}
+\end{equation}
+since the bead size $\omega_\mathrm{bead}$ is known to be $\omega_\mathrm{bead} = \SI{0.04}{\mu m}$. From among the beads in Fig. \ref{fig:beads_numbered}, the ten numbered ones were analyzed and Gaussian fits (Fig. \ref{fig:beads_gaussian_fits}) were applied.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[trim=0 2cm 24cm 0, clip, width=0.8\linewidth]{Flourescence Correlation (FCS)/beads_numbered.jpg}
-    \caption{Caption}
+    \includegraphics[trim=0 2cm 24cm 0, clip, width=0.6\linewidth]{Flourescence Correlation (FCS)/beads_numbered.jpg}
+    \caption{Image of multiple beads. The ten numbered beads (red numbers) are chosen for determination of the lateral microscope resolution via the fwhm values of their respective intensity profiles.}
     \label{fig:beads_numbered}
 \end{figure}
 
-
-
-
-
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_1.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_2.jpg}
+        %\caption{Bead 2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_3.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_4.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_5.jpg}
+        %\caption{Bead 2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_6.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_7.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_8.jpg}
+        %\caption{Bead 2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_9.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_4.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \caption{Recorded intensities (blue dots) and Gaussian fits (red lines) to the ten beads depicted and numbered in Fig. \ref{fig:beads_numbered}. Each data point corresponds to one pixel and its respective intensity.}
+    \label{fig:beads_gaussian_fits}
+\end{figure}
 
 \begin{table}[h]
 \caption{FWHM values extracted from Gaussian fits for 10 beads.}
@@ -74,6 +146,35 @@ Mean & 0.365 $\pm$ 0.006 \\
 \end{tabular}
 \label{tab:fwhm_values}
 \end{table}
+
+The fwhm values for the ten bead intensities extracted from the fits can be found in table \ref{tab:fwhm_values}, as can the mean of all the values. Mean, median and the uncertainties are also depicted as a box plot in Fig. \ref{fig:boxplot}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Flourescence Correlation (FCS)/boxplot.jpg}
+    \caption{Box plot of the determined fwhm values. Mean and median are closely spaced, since all fwhm values are in a similar range.}
+    \label{fig:boxplot}
+\end{figure}
+
+
+
+Using this and equation \ref{eq:lateral_resolution}, the lateral resolution is determined to be
+$$\omega_\mathrm{lat} = \SI{363(6)}{\nano\meter}$$
+which is in the same order of magnitude as the rough estimate from Task 1.
+It is, however, significantly larger than the expected value. Possible sources of systematic error include grouping of multiple beads (unlikely to result in the observed pattern) or a different size than the one expected.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{Task 3: FCS Measurements of Freely Diffusing Fluorescent Molecules and Nanoparticles}
