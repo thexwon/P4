@@ -5,26 +5,51 @@
 \subsection{Task 1a}
 Using the Nikon E Plan 10x/0.25 objective, which utilizes air as an immersion medium, an EPROM SI memory chip is examined to get familiar with the microscope. Different areas and structures on the chip are looked upon. 
 
-
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{Flourescence Correlation (FCS)/Daten/1b_512_16x67_0um1.tif}
-    \caption{Image of the EPROM SI memory chip at \SI{0.1}{\mu m} pixel size.}
-    \label{fig:si_chip_0.1nm}
+    \includegraphics[width=0.5\linewidth]{Flourescence Correlation (FCS)/Daten/si_chip_1nm1.png}
+    \caption{Image of the EPROM SI memory chip at \SI{1.1}{\mu m} pixel size.}
+    \label{fig:si_chip_1.1nm}
 \end{figure}
 
 
 
-\begin{figure}
+\subsection{Task 1b}
+Two different images are taken at $\SI{1.1}{\mu m}$ and $\SI{0.1}{\mu m}$ pixel size. They are depicted in Figs. \ref{fig:si_chip_1.1nm} and \ref{fig:si_chip_0.1nm}. As can be seen, the image at a pixel size of $\SI{0.1}{\mu m}$ looks significantly less distinguished. Looking at the smallest discernible features and the amount of pixels over which the blurring stretches (see Fig. \ref{fig:resolution_power_image_estimation}), the resolving power of the microscope can be estimated to be approximately
+$$\text{5 Pixels} \cdot \frac{\SI{0.1}{\mu m}}{\text{Pixel}} = \SI{0.5}{\mu m}$$
+This value will later be compared to the one determined via estimation of microscope resolution based on immobilized fluorescent beads.
+
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\linewidth]{Flourescence Correlation (FCS)/Daten/1b_512_16x67_0um1.tif}
+    \includegraphics[width=0.5\linewidth]{Flourescence Correlation (FCS)/Daten/si_chip_0nm1.png}
     \caption{Image of the EPROM SI memory chip at \SI{0.1}{\mu m} pixel size.}
     \label{fig:si_chip_0.1nm}
 \end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Flourescence Correlation (FCS)/resolution_power_image_estimation.png}
+    \caption{Zoomed in section of Fig. \ref{fig:si_chip_0.1nm} to distinguish individual pixels. Based on the number of pixels over which the features of the chip are blurred, the resolution power of the microscope is approximated.}
+    \label{fig:resolution_power_image_estimation}
+\end{figure}
+
+
 
 
 
 \section{Task 2: Estimation of Microscope Resolution Based on Immobilized Fluorescent Beads}
+
+\begin{figure}
+    \centering
+    \includegraphics[trim=0 2cm 24cm 0, clip, width=0.8\linewidth]{Flourescence Correlation (FCS)/beads_numbered.jpg}
+    \caption{Caption}
+    \label{fig:beads_numbered}
+\end{figure}
+
+
+
+
+
 
 \begin{table}[h]
 \caption{FWHM values extracted from Gaussian fits for 10 beads.}
@@ -49,3 +74,28 @@ Mean & 0.365 $\pm$ 0.006 \\
 \end{tabular}
 \label{tab:fwhm_values}
 \end{table}
+
+
+\section{Task 3: FCS Measurements of Freely Diffusing Fluorescent Molecules and Nanoparticles}
+The goal of this task is to determine hydrodynamic radius and concentration of nanoparticles in various samples. In order to extract useful information from each FCS measurement, the effective focal volume needs to be known, which is determined in Section \ref{section:fcs_task3a} using a reference sample of Atto655 with known diffusion constant. With this calibration, the nanoparticle samples are characterized in section \ref{section:fcs_task3b}. 
+
+\subsection{Task 3a: Calibration FCS Measurement Using an Atto655 Sample}
+\label{section:fcs_task3a}
+In this task, the auto-correlation function of the fluorescence intensity of Atto655 solved in water is recorded and fitted to the function 
+\begin{equation}
+G(\tau) = G(0) \cdot \left[1 + \frac{\tau}{\tau_D}\right]^{-1} \cdot \left[1 + \frac{\tau}{\tau_D S^2}\right]^{-1/2}
+\end{equation}
+which is further described in section \ref{section:fcs_brownian}.
+For this task, the parameter $S = 5$ is fixed, the parameters $G(0)$ and $\tau_D$ are determined by fitting the recorded data, shown in figure \ref{}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{}
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+
+
+\subsection{Task 3b: FCS Measurement and Characterization of Nanoparticles}
+\label{section:fcs_task3b}
