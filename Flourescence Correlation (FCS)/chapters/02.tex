@@ -1,5 +1,60 @@
 \chapter{Theoretical Background}
 
 \section{Optical Resolution of a Light Microscope}
+The resolution of an optical microscope is fundamentally limited by physical principles. The minimum resolvable distance $d_\mathrm{min}$ can be described quantitatively by the Abbe formula
+
+\begin{equation}
+    d_\mathrm{min} = \frac{\lambda}{2 n \sin{\alpha}}
+\end{equation}
+
+with the wavelength of light $\lambda$, the half angle of the objective aperture $\alpha$ and the refractive index of surrounding medium $n$. During these experiments, this will be air ($n = 1$), water ($n = 1.33$) or oil ($n= 1.52$).
 
 
+\section{Confocal Microscopy}
+\label{sec:FCS_conf}
+Confocal microscopy dramatically improves resolution by introducing a physical pinhole in the image plane. This pinhole blocks out-of-focus light, keeping only photons originating from the focal region. This provides crucial advantages in the axial resolution. By rejecting light from above and below the focal plane, confocal microscopy achieves better depth discrimination than wide-field microscopy. Effective lateral width becomes:
+
+\begin{equation}
+    \omega_\mathrm{confocal} = 0.4 \frac{\lambda}{n \sin{\alpha}}
+\end{equation}
+
+
+
+\section{Autocorrelation Analysis}
+The autocorrelation function $G(\tau)$ measures the self-similarity of a signal after a time lag $\tau$. It is defined as 
+
+$$G(\tau) = \langle \delta F(t) \cdot \delta F(t+\tau) \rangle / \langle F(t) \rangle^2$$ 
+
+In fluorescence spectroscopy, it quantifies characteristic time constants of molecular dynamics. At $\tau=0$, the autocorrelation function becomes $G(0) = 1/\langle N \rangle$, allowing direct determination of molecular concentration from the curve amplitude.
+
+
+
+\section{Brownian Molecular Motion and Diffusion Model Function}
+Molecules undergo random walk driven by thermal energy, with mean square displacement $\langle r^2 \rangle = 6Dt$, where $D$ is the diffusion coefficient. The characteristic diffusion time through the focal volume is $\tau_D = r_0^2/(4D)$. For freely diffusing molecules, the autocorrelation function thereby becomes
+
+\begin{equation}
+G(\tau) = G(0) \cdot \left[1 + \frac{\tau}{\tau_D}\right]^{-1} \cdot \left[1 + \frac{\tau}{\tau_D S^2}\right]^{-1/2}
+\end{equation}
+
+where $S = z_0/r_0$ is the focal volume aspect ratio.
+
+
+
+\section{Time-Scales of Diffusion and Triplet Photophysics}
+Diffusion occurs on millisecond timescales ($\tau_D \sim 0.1$--$1$ ms), while triplet state blinking (intersystem crossing to a dark triplet state) operates at microsecond timescales and creates a characteristic hump in the ACF at short times. The triplet contribution is described by 
+
+$$X_{\text{triplet}}(\tau) = 1 + T \cdot e^{-\tau/\tau_T}$$
+
+where $T$ is the triplet state fraction and $\tau_T$ is the triplet relaxation time. Multiple processes can be resolved simultaneously due to their distinct timescale signatures.
+
+
+\section{Diffusion Coefficient, Concentration and the Stokes-Einstein Relation}
+The Stokes-Einstein relation connects diffusion to molecular size:
+\begin{equation}
+D = \frac{k_B T}{6\pi \eta R_h}
+\end{equation}
+where $k_B$ is Boltzmann's constant, $T$ is temperature, $\eta$ is viscosity, and $R_h$ is the hydrodynamic radius. Smaller particles diffuse faster (shorter $\tau_D$) while larger particles diffuse slower. Molecular concentration is determined via 
+
+$$c = 1/(G(0) \cdot V_{\text{eff}})$$
+
+where $V_{\text{eff}} = \pi^{3/2} r_0^2 z_0$ is the effective focal volume, enabling quantitative absolute concentration measurements.

@@ -26,7 +26,7 @@ For a light beam incident on a semiconductor, a portion is reflected at the surf
 \begin{equation*}
 R(\omega) = \frac{(n(\omega)-1)^2 + \kappa^2(\omega)}{(n(\omega)+1)^2 + \kappa^2(\omega)}.
 \end{equation*}
-For a plane-parallel slab of thickness $d$, the total transmission $\hat{T}$ must account for multiple internal reflections. If the light is incoherent or the sample is thick ($d \gg l_c$, the coherence length), the transmitted intensity is found by summing intensities:
+For a plane-parallel slab of thickness $d$, the total transmission $T$ must account for multiple internal reflections. If the light is incoherent or the sample is thick ($d \gg l_c$, the coherence length), the transmitted intensity is found by summing intensities:
 \begin{equation*}
 T(\omega) \approx \frac{(1-R(\omega))^2 e^{-\alpha(\omega)d}}{1 - R^2(\omega)e^{-2\alpha(\omega)d}}.
 \end{equation*}
@@ -39,7 +39,7 @@ T(\omega) \approx [1-R(\omega)]^2 e^{-\alpha(\omega)d}.
 \subsection{Fabry-Perot interferences}
 In thin, plane-parallel semiconductor samples with low absorption and smooth surfaces, the multiple reflected light waves can interfere coherently, forming a Fabry-Perot etalon. The transmission $T$ exhibits characteristic oscillations as a function of wavelength or photon energy. For a lossless slab with surface reflectivity $R$, the transmission is given by the Airy function:
 \begin{equation*}
-\hat{T} = \frac{1}{1 + F \sin^2(\delta)},
+T = \frac{1}{1 + F \sin^2(\delta)},
 \end{equation*}
 where the phase accumulated in one round-trip is $\delta = n(\omega) k d = 2\pi n(\omega) d / \lambda$, and $F = 4R/(1-R)^2$ is the coefficient of finesse. Constructive interference occurs when the condition
 \begin{equation}
@@ -64,7 +64,7 @@ In indirect band gap semiconductors (e.g., Si, Ge), the band extrema are at diff
 
 \subsection{Density of States}
 
-The density of states $D(E)$ is a fundamental quantity that counts the number of available electronic states per unit energy and volume. For a free electron gas with a parabolic dispersion $E(\boldsymbol{k}) = \hbar^2 k^2 / (2m^*)$, $D(E)$ depends on the system's dimensionality $d$:
+The density of states $D(E)$ is a fundamental quantity that counts the number of available electronic states per unit energy and volume. For a free electron gas with a parabolic dispersion $E(\boldsymbol{k}) = \hbar^2 k^2 / (2m^*)$, $D(E)$ depends on the system's dimensionality:
 \begin{equation}
 D(E) \propto
 \begin{cases}
@@ -105,4 +105,4 @@ A Quantum Dot (QD) provides confinement in all three spatial dimensions, resulti
 \label{dot_energy}
 E_{n_x n_y n_z} = E_c + \frac{\hbar^2 \pi^2}{2m^*} \left( \frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} + \frac{n_z^2}{L_z^2} \right).
 \end{equation}
-A reduction in the dot size leads to a blue shift of the absorption and emission spectra, a phenomenon known as the quantum size effect.
+A reduction in the dot size leads to a blue shift of the absorption and emission spectra; a phenomenon known as the quantum size effect.
