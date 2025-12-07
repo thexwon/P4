@@ -85,17 +85,82 @@ In this task, the auto-correlation function of the fluorescence intensity of Att
 \begin{equation}
 G(\tau) = G(0) \cdot \left[1 + \frac{\tau}{\tau_D}\right]^{-1} \cdot \left[1 + \frac{\tau}{\tau_D S^2}\right]^{-1/2}
 \end{equation}
-which is further described in section \ref{section:fcs_brownian}.
-For this task, the parameter $S = 5$ is fixed, the parameters $G(0)$ and $\tau_D$ are determined by fitting the recorded data, shown in figure \ref{}
-
+which is further described in section \ref{section:fcs_brownian}. The fit is done using only data from \SIrange{0.01}{1000}{ms} in order to avoid the signal influence of the triplet state, as it is not accounted for in the fitting function.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{}
-    \caption{Caption}
-    \label{fig:placeholder}
+    \includegraphics[width=0.9\linewidth]{Flourescence Correlation (FCS)/fcs_3a.png}
+    \caption{Auto-correlation measurement of Atto655 solved in water and the resulting fit.}
+    \label{fig:fcs_3a}
 \end{figure}
 
+For this task, the parameter $S = 5$ is fixed and the parameters $G(0)$ and $\tau_D$ are determined by fitting the recorded data, shown in figure \ref{fig:fcs_3a}, with the results
+\begin{equation*}
+    \begin{split}
+        G(0) &= \SI{0.0275 \pm 0.0002}{}\\
+        \tau_D &= \SI{0.0491 \pm 0.0008}{ms}
+    \end{split}
+\end{equation*}
+with the uncertainties resulting from the fit. From this the lateral width $r_0$ can be determined.
+\begin{equation*}
+    r_0 = \sqrt{4\cdot D\cdot \tau_D} = \SI{0.272 \pm0.007}{microns}
+\end{equation*}
+with $D= \SI{378\pm20}{\micro\meter\squared\per\second}$ being the diffusion constant of Atto655 in water at a temperature of $T = \SI{20.5 \pm 0.5}{\degree C}$, same as during the experiment. 
+The uncertainty on $D$ results from the read-off uncertainty of the temperature, as well as the $0.19\%$ uncertainty on the tabulated values of $D$ in the preparatory material. The uncertainty on $r_0$ and all following parameters are propagated using gaussian error propagation. \\
+\\
+The lateral width is of the same order of magnitude as the resolution of \SI{0.365}{microns} determined in task 2. However, this resolution was determined with an oil objective with a numerical aperture of 1.4, while this FCS measurement is done using a water objective with $NA = 1.2$. The appropriate resolution in water can be estimated using $\omega_{\text{oil}}\cdot \frac{NA_{\text{oil}}}{NA_{\text{water}}} =  \SI{0.426}{microns}$. It seems the fluorescent area is smaller than the resolvable area. \\
+
+
+The effective focal volume can now be determined from
+\begin{equation*}
+    V_{eff} = \pi^{\frac{3}{2}}r_0^2z_0 = \pi^{\frac{3}{2}}Sr_0^3 = \SI{0.56 \pm 0.05 }{\femto\liter}
+\end{equation*}
+which is of the expected order of magnitude. This effective focal volume is used as a calibration for the following measurements of nanoparticle samples. 
 
 \subsection{Task 3b: FCS Measurement and Characterization of Nanoparticles}
 \label{section:fcs_task3b}
+In this task, the hydrodynamic radius and concentration of nanoparticles are determined. The recorded FCS measurements are fitted in the same manner as in section \ref{section:fcs_task3a}, with the fits and measurements of the six samples shown in figure \ref{fig:fcs_3b}, also tabulated in table \ref{table:fcs_3b}.
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Flourescence Correlation (FCS)/fcs_3b.png}
+    \caption{Auto-correlation measurement different samples of nanoparticles solved in water and the resulting fit.}
+    \label{fig:fcs_3b}
+\end{figure}
+
+Using the Stokes-Einstein-Theorem from section \ref{sec:fcs_stokes}, the hydrodynamic radius $R_H$ can be determined for each sample using the respective fit results for $G(0)$ and $\tau_D$.
+\begin{equation*}
+    R_H = \frac{k_B T}{6\pi \eta D}
+\end{equation*}
+with the Boltzmann constant $k_B$ and $\eta = \SI{989\pm12}{\micro\pascal\second}$ the viscosity of water at a temperature of $T = \SI{20.5 \pm 0.5}{\degree C}$, same as measured during the experiment, given by the preparatory material.
+
+Furthermore, the concentration of nanoparticles per litre in the sample can be calculated using \begin{equation*}
+    c = \frac{1}{G(0)V_\text{eff}}
+\end{equation*}
+For easier display, the concentration per mol $c_\text{mol} = \frac{c}{N_A}$ is calculated and shown in table \ref{table:fcs_3b}, as well as the hydrodynamic radius of each sample.
+
+\begin{table}
+    \centering
+    
+    \caption{Tabulated values of the fit results for $\tau_d$ and $G(0)$, as well as the derived quantities $R_H$ and $c$.}
+    \label{table:fcs_3b}
+    \begin{tabular}{ccccc}
+        \toprule
+        Sample &
+        $G(0)$ &
+        \makecell{Diffusion time \\$\tau_d$ in \si{\milli\second}} &
+        \makecell{Hydrodynamic Radius\\  $R_H$  in \si{\nano\meter}} &
+        \makecell{Concentration\\ $c_\text{mol}$ in \si{\mole\per\litre}}
+        \\
+        \midrule
+        1 & \SI{0.2968\pm0.0003}{}&\SI{1.548\pm0.009}{} &\SI{1.8\pm 0.1}{} &\SI{10.0\pm0.8}{} \\
+        2 & \SI{0.4048\pm0.0009}{}&\SI{1.58\pm0.02}{}   &\SI{1.9\pm 0.1}{} &\SI{7.2 \pm0.6}{}\\
+        3 & \SI{1.208\pm0.002}{}&\SI{1.69 \pm0.01}{}    &\SI{2.0\pm 0.1}{} &\SI{2.4 \pm0.2}{} \\
+        4 & \SI{0.2119 \pm0.0001}{}&\SI{1.713\pm0.006}{}&\SI{2.0\pm 0.1}{} &\SI{13.9\pm1.1}{} \\
+        5 & \SI{0.4614\pm0.0003}{}&\SI{1.690\pm0.007}{} &\SI{2.0\pm 0.1}{} &\SI{6.4 \pm0.5}{} \\
+        6 & \SI{0.9042\pm0.0007}{}&\SI{1.632\pm0.008}{} &\SI{1.9\pm 0.1}{} &\SI{3.2 \pm0.3}{} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+It seems the samples consist of nanoparticles of roughly the same size, in varying concentrations. Based on their similar diffusion times, sample one, two and six might contain the same nanoparticles in different concentrations, as well as samples three, four and five.  
