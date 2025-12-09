@@ -5,7 +5,7 @@
 \subsection{Task 1a}
 Using the Nikon E Plan 10x/0.25 objective, which utilizes air as an immersion medium, an EPROM SI memory chip is examined to get familiar with the microscope. Different areas and structures on the chip are looked upon. 
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\linewidth]{Flourescence Correlation (FCS)/Daten/si_chip_1nm1.png}
     \caption{Image of the EPROM SI memory chip at \SI{1.1}{\mu m} pixel size.}
@@ -34,8 +34,7 @@ This value will later be compared to the one determined via estimation of micros
 \end{figure}
 
 
-
-
+\clearpage
 
 \section{Task 2: Estimation of Microscope Resolution Based on Immobilized Fluorescent Beads}
 For this task, immobilized fluorescent beads are looked upon. Their intensity profiles - in this case across a horizontal line - are analyzed to determine the microscope resolution. This is done by fitting the intensity to a Gaussian model:
@@ -51,14 +50,14 @@ Using this, the lateral resolution $\omega_\mathrm{lat}$ can be determined via
 \end{equation}
 since the bead size $\omega_\mathrm{bead}$ is known to be $\omega_\mathrm{bead} = \SI{0.04}{\mu m}$. From among the beads in Fig. \ref{fig:beads_numbered}, the ten numbered ones were analyzed and Gaussian fits (Fig. \ref{fig:beads_gaussian_fits}) were applied.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[trim=0 2cm 24cm 0, clip, width=0.6\linewidth]{Flourescence Correlation (FCS)/beads_numbered.jpg}
-    \caption{Image of multiple beads. The ten numbered beads (red numbers) are chosen for determination of the lateral microscope resolution via the fwhm values of their respective intensity profiles.}
+    \caption{Image of multiple beads. The pixel size is \SI{49.7}{nm}. The original image size is 512x512 pixel, though the image was cropped for clarity. The ten numbered beads (red numbers) are chosen for determination of the lateral microscope resolution via the fwhm values of their respective intensity profiles.}
     \label{fig:beads_numbered}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \begin{subfigure}{0.3\textwidth}
         \centering
@@ -119,29 +118,29 @@ since the bead size $\omega_\mathrm{bead}$ is known to be $\omega_\mathrm{bead} 
         \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_4.jpg}
         %\caption{Bead 1}
     \end{subfigure}
-    \caption{Recorded intensities (blue dots) and Gaussian fits (red lines) to the ten beads depicted and numbered in Fig. \ref{fig:beads_numbered}. Each data point corresponds to one pixel and its respective intensity.}
+    \caption{Recorded intensity profiles along the horizontal axis (blue dots) and Gaussian fits (red lines) to the ten beads depicted and numbered in Fig. \ref{fig:beads_numbered}. Each data point corresponds to one pixel and its respective intensity. All intensity profiles appear to describe Gaussian curves with few outlying datapoints. Regarding the fit quality, no trivial dependence on maximum intensity can be observed.}
     \label{fig:beads_gaussian_fits}
 \end{figure}
 
 \begin{table}[h]
 \caption{FWHM values extracted from Gaussian fits for 10 beads.}
 \centering
-\begin{tabular}{c c}
+\begin{tabular}{c c c}
 \toprule
-Bead & FWHM [µm] \\
+Bead & FWHM [pixels] & FWHM [µm] \\
 \midrule
-1 & 0.36 $\pm$ 0.02 \\
-2 & 0.34 $\pm$ 0.02 \\
-3 & 0.31 $\pm$ 0.01 \\
-4 & 0.39 $\pm$ 0.02 \\
-5 & 0.34 $\pm$ 0.02 \\
-6 & 0.41 $\pm$ 0.03 \\
-7 & 0.36 $\pm$ 0.02 \\
-8 & 0.37 $\pm$ 0.01 \\
-9 & 0.35 $\pm$ 0.01 \\
-10 & 0.41 $\pm$ 0.02 \\
+1 & 7.28 $\pm$ 0.47 & 0.36 $\pm$ 0.02 \\
+2 & 6.76 $\pm$ 0.38 & 0.34 $\pm$ 0.02 \\
+3 & 6.27 $\pm$ 0.21 & 0.31 $\pm$ 0.01 \\
+4 & 7.88 $\pm$ 0.32 & 0.39 $\pm$ 0.02 \\
+5 & 6.79 $\pm$ 0.45 & 0.34 $\pm$ 0.02 \\
+6 & 8.24 $\pm$ 0.58 & 0.41 $\pm$ 0.03 \\
+7 & 7.31 $\pm$ 0.44 & 0.36 $\pm$ 0.02 \\
+8 & 7.50 $\pm$ 0.27 & 0.37 $\pm$ 0.01 \\
+9 & 7.13 $\pm$ 0.25 & 0.35 $\pm$ 0.01 \\
+10 & 8.29 $\pm$ 0.47 & 0.41 $\pm$ 0.02 \\
 \midrule
-Mean & 0.365 $\pm$ 0.006 \\
+Mean & 7.35 $\pm$ 0.13 & 0.365 $\pm$ 0.006 \\
 \bottomrule
 \end{tabular}
 \label{tab:fwhm_values}
@@ -174,7 +173,7 @@ It is, however, significantly larger than the expected value. Possible sources o
 
 
 
-
+\clearpage
 
 
 \section{Task 3: FCS Measurements of Freely Diffusing Fluorescent Molecules and Nanoparticles}
@@ -188,9 +187,9 @@ G(\tau) = G(0) \cdot \left[1 + \frac{\tau}{\tau_D}\right]^{-1} \cdot \left[1 + \
 \end{equation}
 which is further described in section \ref{section:fcs_brownian}. The fit is done using only data from \SIrange{0.01}{1000}{ms} in order to avoid the signal influence of the triplet state, as it is not accounted for in the fitting function.
 
-\begin{figure}
+\begin{figure}[]
     \centering
-    \includegraphics[width=0.9\linewidth]{Flourescence Correlation (FCS)/fcs_3a.png}
+    \includegraphics[width=0.8\linewidth]{Flourescence Correlation (FCS)/fcs_3a.png}
     \caption{Auto-correlation measurement of Atto655 solved in water and the resulting fit.}
     \label{fig:fcs_3a}
 \end{figure}
@@ -209,7 +208,7 @@ with the uncertainties resulting from the fit. From this the lateral width $r_0$
 with $D= \SI{378\pm20}{\micro\meter\squared\per\second}$ being the diffusion constant of Atto655 in water at a temperature of $T = \SI{20.5 \pm 0.5}{\degree C}$, same as during the experiment. 
 The uncertainty on $D$ results from the read-off uncertainty of the temperature, as well as the $0.19\%$ uncertainty on the tabulated values of $D$ in the preparatory material. The uncertainty on $r_0$ and all following parameters are propagated using gaussian error propagation. \\
 \\
-The lateral width is of the same order of magnitude as the resolution of \SI{0.365}{microns} determined in task 2. However, this resolution was determined with an oil objective with a numerical aperture of 1.4, while this FCS measurement is done using a water objective with $NA = 1.2$. The appropriate resolution in water can be estimated using $\omega_{\text{oil}}\cdot \frac{NA_{\text{oil}}}{NA_{\text{water}}} =  \SI{0.426}{microns}$. It seems the fluorescent area is smaller than the resolvable area. \\
+The lateral width is of the same order of magnitude as the resolution of \SI{0.363}{microns} determined in task 2. However, this resolution was determined with an oil objective with a numerical aperture of 1.4, while this FCS measurement is done using a water objective with $NA = 1.2$. The appropriate resolution in water can be estimated using $\omega_{\text{oil}}\cdot \frac{NA_{\text{oil}}}{NA_{\text{water}}} =  \SI{0.426}{microns}$. It seems the fluorescent area is smaller than the resolvable area. \\
 
 
 The effective focal volume can now be determined from
@@ -221,7 +220,7 @@ which is of the expected order of magnitude. This effective focal volume is used
 \subsection{Task 3b: FCS Measurement and Characterization of Nanoparticles}
 \label{section:fcs_task3b}
 In this task, the hydrodynamic radius and concentration of nanoparticles are determined. The recorded FCS measurements are fitted in the same manner as in section \ref{section:fcs_task3a}, with the fits and measurements of the six samples shown in figure \ref{fig:fcs_3b}, also tabulated in table \ref{table:fcs_3b}.
-\begin{figure}
+\begin{figure}[]
     \centering
     \includegraphics[width=\linewidth]{Flourescence Correlation (FCS)/fcs_3b.png}
     \caption{Auto-correlation measurement different samples of nanoparticles solved in water and the resulting fit.}
@@ -230,7 +229,7 @@ In this task, the hydrodynamic radius and concentration of nanoparticles are det
 
 Using the Stokes-Einstein-Theorem from section \ref{sec:fcs_stokes}, the hydrodynamic radius $R_H$ can be determined for each sample using the respective fit results for $G(0)$ and $\tau_D$.
 \begin{equation*}
-    R_H = \frac{k_B T}{6\pi \eta D}
+    R_H = \frac{k_B T}{6\pi \eta D} = \frac{4k_B T \tau_D}{6\pi \eta r_0^2}
 \end{equation*}
 with the Boltzmann constant $k_B$ and $\eta = \SI{989\pm12}{\micro\pascal\second}$ the viscosity of water at a temperature of $T = \SI{20.5 \pm 0.5}{\degree C}$, same as measured during the experiment, given by the preparatory material.
 
@@ -244,21 +243,23 @@ For easier display, the concentration per mol $c_\text{mol} = \frac{c}{N_A}$ is 
     
     \caption{Tabulated values of the fit results for $\tau_d$ and $G(0)$, as well as the derived quantities $R_H$ and $c$.}
     \label{table:fcs_3b}
-    \begin{tabular}{ccccc}
+    \small
+    \begin{tabular}{cccccc}
         \toprule
         Sample &
         $G(0)$ &
         \makecell{Diffusion time \\$\tau_d$ in \si{\milli\second}} &
         \makecell{Hydrodynamic Radius\\  $R_H$  in \si{\nano\meter}} &
-        \makecell{Concentration\\ $c_\text{mol}$ in \si{\mole\per\litre}}
+        \makecell{Concentration\\ $c_\text{mol}$ in \si{\nano\mole\per\litre}}&
+        \makecell{Average amount of \\  particles $\frac{1}{G(0)}$}
         \\
         \midrule
-        1 & \SI{0.2968\pm0.0003}{}&\SI{1.548\pm0.009}{} &\SI{1.8\pm 0.1}{} &\SI{10.0\pm0.8}{} \\
-        2 & \SI{0.4048\pm0.0009}{}&\SI{1.58\pm0.02}{}   &\SI{1.9\pm 0.1}{} &\SI{7.2 \pm0.6}{}\\
-        3 & \SI{1.208\pm0.002}{}&\SI{1.69 \pm0.01}{}    &\SI{2.0\pm 0.1}{} &\SI{2.4 \pm0.2}{} \\
-        4 & \SI{0.2119 \pm0.0001}{}&\SI{1.713\pm0.006}{}&\SI{2.0\pm 0.1}{} &\SI{13.9\pm1.1}{} \\
-        5 & \SI{0.4614\pm0.0003}{}&\SI{1.690\pm0.007}{} &\SI{2.0\pm 0.1}{} &\SI{6.4 \pm0.5}{} \\
-        6 & \SI{0.9042\pm0.0007}{}&\SI{1.632\pm0.008}{} &\SI{1.9\pm 0.1}{} &\SI{3.2 \pm0.3}{} \\
+        1 & \SI{0.2968\pm0.0003}{}&\SI{1.548\pm0.009}{} &\SI{18\pm 1}{} &\SI{10.0\pm0.8}{}& \SI{3.368 \pm0.004}{}    \\
+        2 & \SI{0.4048\pm0.0009}{}&\SI{1.58\pm0.02}{}   &\SI{19\pm 1}{} &\SI{7.2 \pm0.6}{} & \SI{2.470\pm0.006}{}   \\
+        3 & \SI{1.208\pm0.002}{}&\SI{1.69 \pm0.01}{}    &\SI{20\pm 1}{} &\SI{2.4 \pm0.2}{} & \SI{0.827\pm0.001}{}   \\
+        4 & \SI{0.2119 \pm0.0001}{}&\SI{1.713\pm0.006}{}&\SI{20\pm 1}{} &\SI{13.9\pm1.1}{} & \SI{4.717\pm0.003}{}   \\
+        5 & \SI{0.4614\pm0.0003}{}&\SI{1.690\pm0.007}{} &\SI{20\pm 1}{} &\SI{6.4 \pm0.5}{} & \SI{2.167\pm0.002}{}   \\
+        6 & \SI{0.9042\pm0.0007}{}&\SI{1.632\pm0.008}{} &\SI{19\pm 1}{} &\SI{3.2 \pm0.3}{} & \SI{1.1058\pm0.0009}{}   \\
         \bottomrule
     \end{tabular}
 \end{table}
