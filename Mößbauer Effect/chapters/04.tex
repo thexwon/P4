@@ -7,23 +7,6 @@ All the absorption peaks are fitted using a Gaussian model in combination with b
 
 
 \section{Vacromium}
-Vacromium (stainless steel) exhibits a single resonance absorption peak. The seperate fits for both velocity sweeps are depicted in Fig. \ref{fig:vacromium_fit}. A Gauss peak was fitted to the data. Since the peak was already distinguishable by eye, its position was chosen for a guess of the fit function. Converting the peak positions into velocity, combining them and calculating the respective energy yields
-
-\begin{equation}
-    E_0 = \SI{-11.6(0.4)}{neV}
-\end{equation}
-
-From the standard deviation $\sigma$ of a Gaussian peak, its uncertainty $\Gamma$ can be calculated via
-
-\begin{equation}
-    \Gamma = 2 \sqrt{2 \ln{2}} \sigma = 
-\end{equation}
-
-The uncertainty of the Gaussian peaks can be used to calculate the lifetime of the excited state:
-
-\begin{equation}
-    
-\end{equation}
 
 \begin{figure}[htbp]
     \centering
@@ -40,12 +23,33 @@ The uncertainty of the Gaussian peaks can be used to calculate the lifetime of t
     \label{fig:vacromium_fit}
 \end{figure}
 
+Vacromium (stainless steel) exhibits a single resonance absorption peak. The seperate fits for both velocity sweeps are depicted in Fig. \ref{fig:vacromium_fit}. A Gauss peak was fitted to the data. Since the peak was already distinguishable by eye, its position was chosen for a guess of the fit function. Converting the peak positions into velocity, combining them and calculating the respective energy yields
+
+\begin{equation}
+    E_0 = \SI{-11.6(0.4)}{neV}
+\end{equation}
+
+From the standard deviation $\sigma$ of a Gaussian peak, its uncertainty $\Gamma$ can be calculated via
+
+\begin{equation}
+    \Gamma = 2 \sqrt{2 \ln{2}} \sigma = \SI{694(1)}{neV}
+\end{equation}
+
+The uncertainty of the Gaussian peaks can be used to calculate the lifetime of the excited state:
+
+\begin{equation}
+    \tau = \frac{\hbar}{\Gamma} = \SI{948(1)}{ps}
+\end{equation}
+
+
+
 
 
 
 
 
 \section{FePO$_4$}
+
 \begin{figure}[htbp]
     \centering
     \begin{minipage}[b]{0.48\textwidth}
@@ -62,11 +66,32 @@ The uncertainty of the Gaussian peaks can be used to calculate the lifetime of t
     \caption{Gaussian fits for FePO$_4$. The guess which the fit is based on is shown in green, the guessed peak positions are marked with vertical red lines. The fit (red) also includes a background assumed to be linear.}
 \end{figure}
 
+What distinguishes these absorption peaks is their overlapping. Nonetheless, the fits as depicted in Figs. \ref{fig:fepo4_fit1, fig:fepo4_fit2} were able to decently capture the behaviour. The absorption positions in terms of energy are determined to be
+\begin{align}
+    E_0 = \SI{-8.1(1.4)}{neV}
+    E_1 = \SI{28.8(2.2)}{neV}
+\end{align}
+
+The isomeric shift is thus given by
+
+\begin{equation}
+    I = \frac{E_0 + E_1}{2} = \SI{10.3(1.2)}{neV}
+\end{equation}
+
+Since the quadrupole moment $Q$ is known to be $Q = \SI{0.21(1)e-28}{m^2}$, the second derivative of the electric potential at the nucleus can be calculated.
+
+\begin{equation}
+    \partial_z^2V = \frac{2(E_1 - E_0)}{Q} = \SI{3.51(23)e21}{Vm^{-2}}
+\end{equation}
+
+
+
 
 
 
 
 \section{FeSO$_4$}
+
 \begin{figure}[htbp]
     \centering
     \begin{minipage}[b]{0.48\textwidth}
@@ -83,9 +108,32 @@ The uncertainty of the Gaussian peaks can be used to calculate the lifetime of t
     \caption{Gaussian fits for FeSO$_4$. The guess which the fit is based on is shown in green, the guessed peak positions are marked with vertical red lines. The fit (red) also includes a background assumed to be linear.}
 \end{figure}
 
+In a similar fashion to FePO$_4$, two absorption peaks were observed for FeSO$_4$. However, in this case the peaks are much more separated, making the fitting depicted in Figs. \ref{fig:feso4_fit1, fig:feso4_fit2} more reliable. The absorption positions in terms of energy are determined to be
+
+\begin{align}
+    E_0 = \SI{-13.0(1.2)}{neV}
+    E_1 = \SI{120.5(4)}{neV}
+\end{align}
+
+The isomeric shift is thus given by
+
+\begin{equation}
+    I = \frac{E_0 + E_1}{2} = \SI{53.7(6)}{neV}
+\end{equation}
+
+Since the quadrupole moment $Q$ is known to be $Q = \SI{0.21(1)e-28}{m^2}$, the second derivative of the electric potential at the nucleus can be calculated.
+
+\begin{equation}
+    \partial_z^2V = \frac{2(E_1 - E_0)}{Q} = \SI{1.27(1)e22}{Vm^{-2}}
+\end{equation}
+
+
+
+
 
 \section{Natural Iron}
-\begin{figure}[htbp]
+
+\begin{figure}[h!]
     \centering
     \begin{minipage}[b]{0.48\textwidth}
         \centering
@@ -101,5 +149,25 @@ The uncertainty of the Gaussian peaks can be used to calculate the lifetime of t
     \caption{Gaussian fits for iron. The guess which the fit is based on is shown in green, the guessed peak positions are marked with vertical red lines. The fit (red) also includes a background assumed to be linear.}
 \end{figure}
 
+Combining all the fits depicted in Figs. \ref{fig:iron_fit1, fig:iron_fit2} results in the following peak positions:
+\begin{itemize}
+    \item Peak 1: \SI{255(1)}{neV}
+    \item Peak 2: \SI{143(1)}{neV}
+    \item Peak 3: \SI{35(1)}{neV}
+    \item Peak 4: \SI{-51(1)}{neV}
+    \item Peak 5: \SI{-157(1)}{neV}
+    \item Peak 6: \SI{-267(1)}{neV}
+\end{itemize}
+By analyzing the peak positions in relation to one another and the zero-energy position, the isoshift is determined to be \SI{-6.78(35)}{neV}. The magnetic field can be calculated to be
+\begin{equation}
+    B = \SI{-33.86(31)}{T}
+\end{equation}
+Assuming $\mu_\mathrm{g} = 90.3(7)\cdot 10^{-3} \mu_\mathrm{N}$, $I_\mathrm{g} = \frac{1}{2}$ and $I_\mathrm{a} = \frac{3}{2}$, the magnetic moment of the exited state $\mu_\mathrm{a}$ can be calculated:
+\begin{equation}
+    \mu_\mathrm{a} = \SI{-4.92(05)}{neV/T} = -0.156(2) \mu_\mathrm{k} = -1.73(1) \mu_\mathrm{g}
+\end{equation}
+
+
+    
 
 
