@@ -1,3 +1,35 @@
-\chapter{Ziel des Versuchs, Theoretische Grundlagen}
-\section{Abschnitt}
-\subsection{Unterabschnitt}
+\chapter{Theory}
+
+\section{Gamma Decay of Atomic Nuclei}
+After radioactive decays such as $\alpha$ or $\beta$ decay, atomic nuclei are often left in excited states. The de-excitation to lower-energy states or to the ground state proceeds via the emission of $\gamma$ radiation. Depending on the nuclear level structure, the transition may occur either directly or through one or more intermediate states. In the latter case, a sequence of successive $\gamma$ emissions, referred to as a $\gamma$ cascade, is observed. Examples of both can be seen in figure \ref{fig:Co_decay}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{Gamma Coincidence Spectroscopy/include/gamma_coincidence_Co_decay.png}
+    \caption{Possible decay chains of $^{60}$Co. Figure a) shows direct $\gamma$-transitions into the ground state after $\beta$-decays, while figure b) shows a two part $\gamma$-decay chain into the ground state; a simple gamma cascade. Taken from the provided preparatory material.}
+    \label{fig:Co_decay}
+\end{figure}
+
+The energies of the emitted $\gamma$ quanta are discrete and correspond to the energy differences between nuclear states. Consequently, the measurement of $\gamma$ energies provides direct information about nuclear levels.
+
+\section{Interaction of Gamma Radiation with Matter}
+In the energy range relevant to this experiment, $\gamma$ rays interact with matter mainly through the photoelectric effect and Compton scattering.\\
+
+In the photoelectric effect, the $\gamma$ quantum is completely absorbed by an atomic electron, leading to the formation of a photopeak in the energy spectrum.\\
+In Compton scattering, only part of the $\gamma$ energy is transferred to an electron, resulting in a continuous energy distribution up to a sharp cutoff known as the Compton edge, which corresponds to the highest energy that can be transferred to a weakly bound electron of a detector's atom by an incident photon in a single scattering process.\\
+
+Additional spectral features such as backscatter peaks arise from $\gamma$ rays that are scattered in surrounding materials before entering the detector. 
+
+\section{Gamma-Ray Detectors}
+Two different detector types are used in this experiment: a NaI(Tl) scintillation detector and a high-purity germanium (HPGe) detector. \\
+In a NaI detector, incoming $\gamma$ rays produce scintillation light, which is converted into an electrical signal by a photomultiplier tube. NaI detectors are characterized by high detection efficiency but limited energy resolution.\\
+HPGe detectors operate as semiconductor detectors, where $\gamma$ rays create electron–hole pairs in the germanium crystal. Due to the small energy required to generate a charge carrier pair, HPGe detectors achieve superior energy resolution. However, they require cooling to liquid nitrogen temperatures to reduce thermal noise.
+
+\section{Energy Resolution and Calibration}
+The energy resolution of a detector describes its ability to distinguish between $\gamma$ rays of different energies and is commonly quantified by the full width at half maximum (FWHM) of a photopeak. The energy resolution depends on statistical fluctuations in the signal generation process and generally improves with increasing $\gamma$ energy.
+
+Energy calibration is performed by assigning known $\gamma$ energies from calibration sources to the corresponding photopeak positions in the measured spectra. A linear relation between channel number and energy is assumed over the relevant energy range.
+
+\section{Coincidence Spectroscopy}
+Coincidence spectroscopy is a method for studying correlated $\gamma$ emissions. Both gamma-ray detectors are operated simultaneously, and events are considered coincident if signals occur in both detectors within a predefined time window. True coincidences originate from correlated transitions within a $\gamma$ cascade, while random coincidences result from unrelated events occurring within the coincidence window.
+By applying appropriate time gates to the recorded time spectrum, true coincidences can be enhanced relative to random coincidences. This technique allows the identification of $\gamma$ cascades and the reconstruction of nuclear level schemes.
