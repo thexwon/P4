@@ -3,7 +3,23 @@ All the absorption peaks are fitted using a Gaussian model in combination with b
 
 \section{Velocity Calibration}
 
+To determine the velocity of the source, a Michelson interferometer is used, where the usually moveable mirror is attached to the moving source, as seen in figure \ref{fig:moessbauer_setup}. The velocity can then be measured by counting the amount of intensity maxima occurring at the photodiode of the interferometer. The frequency of these maxima is given by the velocity of the source $v$ and the laser wavelength $\lambda = \SI{650}{nm}$ of the interferometer, which can be directly expressed by the amount of recorded interference maxima $N$ during the time $T = \frac{10}{1024} \si{s}$, the total amount of time in which one of 1024 channels is active. 
+\begin{equation*}
+    \begin{split}
+        f &= \frac{2v}{\lambda} = \frac{N}{T} \\
+        \rightarrow v &= \frac{\lambda}{2}\frac{N}{T} = N \cdot 0.0328 \SI{}{\frac{mm}{s}}
+    \end{split}
+\end{equation*}
 
+A calibration run with a total measurement time of \SI{10}{s} was performed, resulting in the calculated velocity for each channel as shown in figure \ref{}. As the amount of passed maxima at the interferometer is the same for positive and negative velocities of equal speed, the velocities corresponding to the source moving away from the detector needed to be inverted, as shown in figure \ref{}
+
+Based on the equation for the velocity, a linear fit was applied to both sides of the spectrum, resulting in the linear equations
+
+\begin{numcases}{v=}
+    $\SI{-4.856(3)e-5}{\frac{m}{s}c + \SI{0.01245(1)}{\frac{m}{s}}} $   &  for $0 \leq c < 512$\\
+    $\SI{4.857(3)e-5}{\frac{m}{s}c + \SI{-0.03733(2)}{\frac{m}{s}}} $   & for  $512 \leq c <1024$
+\end{numcases}
+which can now be used to relate channels to velocities. The uncertainty on the number of counts of maxima was estimated as 1, resulting in the uncertainties of $v$. 
 
 
 \section{Vacromium}
