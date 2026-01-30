@@ -1,2 +1,71 @@
+
+If not indicated otherwise, this lab report is based on the provided preparatory material.
 \chapter{Theory}
 
+
+\section{Resonant Absorption and Nuclear Recoil}
+Resonant absorption refers to the process in which a $\gamma$-photon emitted by one nucleus is subsequently absorbed by another nucleus of the same type, provided that the photon energy exactly matches the energy difference between two nuclear energy levels. Under this condition, the absorption probability is maximal, as the emission and absorption spectra align perfectly.
+
+For free nuclei, resonant absorption of $\gamma$-radiation is hindered. During $\gamma$-emission, conservation of momentum requires the emitting nucleus to recoil, which reduces the photon energy by the recoil energy
+\begin{equation}
+E_R = \frac{p_\gamma^2}{2M},
+\end{equation}
+where $p_\gamma$ is the photon momentum and $M$ the nuclear mass. A similar recoil energy is required during absorption. As a result, the photon emitted by one free nucleus does not have the correct energy to be absorbed resonantly by another. Since the natural linewidth of nuclear $\gamma$-transitions are small, there is no overlap between the absorption and emission spectrum, preventing resonance.
+
+However, thermal motion of the nuclei leads to Doppler broadening of the emitted and absorbed $\gamma$-ray energies. Due to the velocity distribution of the nuclei, the photon energy is shifted according to the Doppler effect, resulting in a broadened energy spectrum. This broadening increases the overlap between emission and absorption lines, and can compensate for the recoil energy at a high enough temperature.
+
+\section{The Mössbauer Effect}
+
+If the emitting and absorbing nuclei are bound in a solid lattice, the recoil momentum can be transferred to the entire crystal. Due to the large effective mass of the lattice, the recoil energy becomes negligibly small. In processes where no phonons are excited, emission and absorption occur without recoil. Under these conditions, a $\gamma$-photon emitted by one nucleus can be absorbed resonantly by another identical nucleus in the lattice. This recoil-free resonant absorption is known as the Mössbauer effect.
+
+The probability of recoil-free emission and absorption is described by the Debye--Waller factor $f(T)$, which depends on temperature and lattice binding strength. Lower temperatures reduce lattice vibrations, suppress Doppler broadening, and increase the recoil-free fraction, thereby enhancing the intensity of the Mössbauer resonance line.
+
+
+
+\section{Doppler Shift and Mössbauer Spectroscopy}
+
+To observe resonant absorption experimentally, a controlled relative velocity $v$ is introduced between the $\gamma$-ray source and the absorber. Due to the Doppler effect, the photon energy in the absorber frame is shifted by
+\begin{equation}
+\Delta E = \frac{v}{c} E_\gamma .
+\end{equation}
+By varying the velocity, the resonance condition can be fulfilled despite energy shifts arising from recoil and hyperfine interactions. The transmitted $\gamma$-ray intensity is measured as a function of velocity, yielding a Mössbauer spectrum with extremely high energy resolution.
+
+\section{Shifting and Splitting of Mössbauer Lines}
+
+The energy of nuclear $\gamma$-transitions is influenced by interactions between the nucleus and its electronic or magnetic environment. These interactions lead to shifts and splittings of the Mössbauer resonance lines and provide information about the local atomic environment.
+
+\subsection{Isomer Shift}
+
+The isomer shift arises from a difference in the electron density at the nucleus between the source and the absorber, leading to a shift of the nuclear energy levels.
+
+The isomer shift $\delta$ is proportional
+\begin{equation}
+\delta \propto \left[ |\psi(0)|^2_\text{abs} - |\psi(0)|^2_\text{src} \right],
+\end{equation}
+where $|\psi(0)|^2$ denotes the electron density at the nucleus. Experimentally, the isomer shift corresponds to a uniform displacement of all resonance lines and is determined as the mean value of the observed absorption energies.
+
+\subsection{Electric Quadrupole Splitting}
+
+For nuclei with spin $I > \tfrac{1}{2}$, the nuclear charge distribution possesses an electric quadrupole moment $Q$. In the presence of a non-vanishing electric field gradient produced by an asymmetric electronic or lattice environment, this quadrupole moment interacts with the field gradient, leading to a splitting of the nuclear energy levels.
+
+The resulting quadrupole splitting $\Delta E_Q$ between the two resonance lines is given by
+\begin{equation}
+\Delta E_Q = \frac{e Q}{2} \, \frac{\partial^2 V}{\partial z^2},
+\end{equation}
+where $\partial^2 V / \partial z^2$ is the principal component of the electric field gradient at the nucleus. In Mössbauer spectra, quadrupole interaction results in symmetric peaks.
+
+\subsection{Magnetic Hyperfine Splitting}
+
+If a magnetic field is present at the nucleus, the nuclear magnetic moment interacts with this field. This interaction lifts the degeneracy of the nuclear spin states via the Zeeman effect.
+
+The energy shift of a nuclear level with magnetic quantum number $m_I$ is given by
+\begin{equation}
+\Delta E_m = -\frac{m}{I}\mu  B,
+\end{equation}
+where $m$ is the magnetic quantum number, $I$ the nuclear spin, $\mu$ the magnetic moment, and $B$ the magnetic field at the nucleus. For a source that is not split by the Zeeman effect, this leads to 
+\begin{equation}
+    E_0(1+\frac{v}{c}) = E_0' - \frac{m_a\mu_aB}{I_a} + \frac{m_g\mu_gB}{I_g}
+\end{equation}
+where the subscript a indicates the excited state of the absorber and subscript g the ground state.
+$E_0'$ indicates the correction for the isomeric shift.
+With known $I_a$, $I_g$ and $\mu_g$, this allows the determination of internal magnetic fields and nuclear magnetic moments from the measured line positions. 
