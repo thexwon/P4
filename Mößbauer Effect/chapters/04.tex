@@ -11,15 +11,27 @@ To determine the velocity of the source, a Michelson interferometer is used, whe
     \end{split}
 \end{equation*}
 
-A calibration run with a total measurement time of \SI{10}{s} was performed, resulting in the calculated velocity for each channel as shown in figure \ref{}. As the amount of passed maxima at the interferometer is the same for positive and negative velocities of equal speed, the velocities corresponding to the source moving away from the detector needed to be inverted, as shown in figure \ref{}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{Mößbauer Effect/VelocityCalibrationSpectrum.png}
+    \caption{Velocity calibration measurement, with maxima count $N$ measured within a total measurement time of \SI{10}{s} in each channel $c$. }
+    \label{fig:mossbauer_vecolitycalibmeas}
+\end{figure}
+A calibration run with a total measurement time of \SI{10}{s} was performed, resulting in the calculated velocity for each channel as shown in figure \ref{fig:mossbauer_vecolitycalibmeas}. As the amount of passed maxima at the interferometer is the same for positive and negative velocities of equal speed, the velocities corresponding to the source moving away from the detector needed to be inverted, as shown in figure \ref{fig:mossbauer_vecolitycalibfit}
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\linewidth]{Mößbauer Effect/VelocityCalibrationFit.png}
+    \caption{Velocity calibration fit, relating the channel $c$ to a velocity $v$.}
+    \label{fig:mossbauer_vecolitycalibfit}
+\end{figure}
 Based on the equation for the velocity, a linear fit was applied to both sides of the spectrum, resulting in the linear equations
 
 \begin{numcases}{v=}
     $\SI{-4.856(3)e-5}{\frac{m}{s}c + \SI{0.01245(1)}{\frac{m}{s}}} $   &  for $0 \leq c < 512$\\
     $\SI{4.857(3)e-5}{\frac{m}{s}c + \SI{-0.03733(2)}{\frac{m}{s}}} $   & for  $512 \leq c <1024$
 \end{numcases}
-which can now be used to relate channels to velocities. The uncertainty on the number of counts of maxima was estimated as 1, resulting in the uncertainties of $v$. 
+which can now be used to relate channels to velocities. The uncertainty on the number of counts of maxima was estimated as 1, resulting in the uncertainties of $v$. The maximum speed is roughly \SI{12.5}{\frac{mm}{s}}.
 
 
 \section{Vacromium}
@@ -35,28 +47,29 @@ which can now be used to relate channels to velocities. The uncertainty on the n
         \centering
         \includegraphics[width=\textwidth]{Mößbauer Effect/vacromium_fit2.png}
     \end{minipage}
-    \caption{Gaussian fits for vacromium. The guess which the fit is based on is shown in green, the guessed peak position is marked with a vertical red line. The fit (red) also includes a background assumed to be linear.}
+    \caption{Lorentzian fits for vacromium. The guess which the fit is based on is shown in green, the guessed peak position is marked with a vertical red line. The fit (red) also includes a background assumed to be linear.}
     \label{fig:vacromium_fit}
 \end{figure}
 
 Vacromium (stainless steel) exhibits a single resonance absorption peak. The seperate fits for both velocity sweeps are depicted in Fig. \ref{fig:vacromium_fit}. A Gauss peak was fitted to the data. Since the peak was already distinguishable by eye, its position was chosen for a guess of the fit function. Converting the peak positions into velocity, combining them and calculating the respective energy yields
 
 \begin{equation}
-    E_0 = \SI{-11.6(0.4)}{neV}
+    E_0 = \SI{-11.9(0.3)}{neV}
 \end{equation}
 
-From the standard deviation $\sigma$ of a Gaussian peak, its uncertainty $\Gamma$ can be calculated via
+The width 
 
 \begin{equation}
-    \Gamma = 2 \sqrt{2 \ln{2}} \sigma = \SI{694(1)}{neV}
+    \Gamma = \SI{590.1(8)}{neV}
 \end{equation}
 
-The uncertainty of the Gaussian peaks can be used to calculate the lifetime of the excited state:
+of a Lorentzian peak can be used to calculate the lifetime of the excited state:
 
 \begin{equation}
-    \tau = \frac{\hbar}{\Gamma} = \SI{948(1)}{ps}
+    \tau = \frac{\hbar}{\Gamma} = \SI{1.115(2)}{ns}
 \end{equation}
 
+This value is two orders of magnitude smaller than the expected one. Calculation via the width of a Gaussian distribution instead of a Lorentzian gave similar values. One possible explanation might be the comparatively high noise in the data. As can be seen from many of the fits, even peaks that should have the same width according to theory, exhibit high deviations from one another (roughly up to 100\%). This still doesn't explain two orders of magnitude. Another explanation could be that the measurement itself has a strong uncertainty associated to it, which could cause the absorption peaks to widen significantly.
 
 
 
@@ -71,18 +84,19 @@ The uncertainty of the Gaussian peaks can be used to calculate the lifetime of t
     \begin{minipage}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Mößbauer Effect/fepo4_fit1.png}
-        \label{fig:fepo4_fit1}
+
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Mößbauer Effect/fepo4_fit2.png}
-        \label{fig:fepo4_fit2}
     \end{minipage}
-    \caption{Gaussian fits for FePO$_4$. The guess which the fit is based on is shown in green, the guessed peak positions are marked with vertical red lines. The fit (red) also includes a background assumed to be linear.}
+    
+    \caption{Lorentzian fits for FePO$_4$. The guess which the fit is based on is shown in green. The fit (red) also includes a background assumed to be linear.}
+    \label{fig:fepo4_fit1}
 \end{figure}
 
-What distinguishes these absorption peaks is their overlapping. Nonetheless, the fits as depicted in Figs. \ref{fig:fepo4_fit1, fig:fepo4_fit2} were able to decently capture the behaviour. The absorption positions in terms of energy are determined to be
+What distinguishes these absorption peaks is their overlapping. Nonetheless, the fits as depicted in figure \ref{fig:fepo4_fit1} were able to decently capture the behaviour. The absorption positions in terms of energy are determined to be
 \begin{align}
     E_0 = \SI{-8.1(1.4)}{neV}
     E_1 = \SI{28.8(2.2)}{neV}
@@ -113,18 +127,17 @@ Since the quadrupole moment $Q$ is known to be $Q = \SI{0.21(1)e-28}{m^2}$, the 
     \begin{minipage}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Mößbauer Effect/feso4_fit1.png}
-        \label{fig:feso4_fit1}
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Mößbauer Effect/feso4_fit2.png}
-        \label{fig:feso4_fit2}
     \end{minipage}
-    \caption{Gaussian fits for FeSO$_4$. The guess which the fit is based on is shown in green, the guessed peak positions are marked with vertical red lines. The fit (red) also includes a background assumed to be linear.}
+    \caption{Lorentzian fits for FeSO$_4$. The guess which the fit is based on is shown in green. The fit (red) also includes a background assumed to be linear.}
+    \label{fig:feso4_fit1}
 \end{figure}
 
-In a similar fashion to FePO$_4$, two absorption peaks were observed for FeSO$_4$. However, in this case the peaks are much more separated, making the fitting depicted in Figs. \ref{fig:feso4_fit1, fig:feso4_fit2} more reliable. The absorption positions in terms of energy are determined to be
+In a similar fashion to FePO$_4$, two absorption peaks were observed for FeSO$_4$. However, in this case the peaks are much more separated, making the fitting depicted in figure \ref{fig:feso4_fit1} more reliable. The absorption positions in terms of energy are determined to be
 
 \begin{align}
     E_0 = \SI{-13.0(1.2)}{neV}
@@ -154,18 +167,19 @@ Since the quadrupole moment $Q$ is known to be $Q = \SI{0.21(1)e-28}{m^2}$, the 
     \begin{minipage}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Mößbauer Effect/iron_fit1.png}
-        \label{fig:iron_fit1}
+        
     \end{minipage}
     \hfill
     \begin{minipage}[b]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Mößbauer Effect/iron_fit2.png}
-        \label{fig:iron_fit2}
+        
     \end{minipage}
     \caption{Gaussian fits for iron. The guess which the fit is based on is shown in green, the guessed peak positions are marked with vertical red lines. The fit (red) also includes a background assumed to be linear.}
+    \label{fig:iron_fit2}
 \end{figure}
 
-Combining all the fits depicted in Figs. \ref{fig:iron_fit1, fig:iron_fit2} results in the following peak positions:
+Combining all the fits depicted in figure \ref{fig:iron_fit2} results in the following peak positions:
 \begin{itemize}
     \item Peak 1: \SI{255(1)}{neV}
     \item Peak 2: \SI{143(1)}{neV}
