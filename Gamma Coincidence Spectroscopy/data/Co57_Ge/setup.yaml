@@ -1,0 +1,93 @@
+WaveformBuffer: &id001
+  slot_count: 128
+  data_length: 1000
+  data_dtype:
+    IN1: int16
+    IN2: int16
+PulseHeightsBuffer: &id002
+  slot_count: 128
+  data_length: 1
+  data_dtype:
+    height: int16
+CoincidencesBuffer:
+  slot_count: 128
+  data_length: 1
+  data_dtype:
+    height_1: int16
+    height_2: int16
+    time_difference: int16
+Buffers:
+  Input: *id001
+  to_spectrum: *id001
+  PulseHeights: *id002
+Workers:
+  RedPitaya:
+    function: importers.redpitaya.waveform
+    sinks:
+    - Input
+    config:
+      ip: rp-f0c38f.local
+      sample_rate: 4
+      negator_IN1: false
+      negator_IN2: false
+      trigger_slope: rising
+      trigger_mode: normal
+      trigger_level: 100
+      number_of_samples_before_trigger: 500
+      set_size: 100
+      rate: 10000
+      trigger_source: IN1
+      channel: IN1
+  Copy:
+    function: misc.copy
+    sources:
+    - Input
+    sinks:
+    - to_spectrum
+    config: {}
+  PHA:
+    file: analyzers.py
+    function: single
+    sources:
+    - to_spectrum
+    sinks:
+    - PulseHeights
+    config:
+      IN1:
+        prominence: 200
+        width: 10
+        gradient_min: 0
+      IN2:
+        prominence: 200
+        width: 10
+        gradient_min: 0
+      trigger_source: IN1
+      channel: IN1
+  PHA_to_Histogram:
+    function: exporters.histogram
+    sources:
+    - PulseHeights
+    config:
+      bins:
+        height:
+        - 0
+        - 4095
+        - 4096
+      update_interval: 5
+  Show_Histogram:
+    function: visualizers.histogram
+    observes:
+    - PulseHeights
+    config: {}
+  Oscilloscope:
+    function: observers.oscilloscope
+    observes:
+    - Input
+    config:
+      ylim:
+      - -4096
+      - 4096
+      colors:
+      - tab:orange
+      - tab:blue
+target_directory: ~/Desktop/target
