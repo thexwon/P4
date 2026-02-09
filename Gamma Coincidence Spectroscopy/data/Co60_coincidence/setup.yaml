@@ -1,0 +1,96 @@
+WaveformBuffer: &id001
+  slot_count: 128
+  data_length: 1000
+  data_dtype:
+    IN1: int16
+    IN2: int16
+PulseHeightsBuffer:
+  slot_count: 128
+  data_length: 1
+  data_dtype:
+    height: int16
+CoincidencesBuffer: &id002
+  slot_count: 128
+  data_length: 1
+  data_dtype:
+    height_1: int16
+    height_2: int16
+    time_difference: int16
+Buffers:
+  Input: *id001
+  to_coincidence: *id001
+  Coincidences: *id002
+Workers:
+  RedPitaya:
+    function: importers.redpitaya.waveform
+    sinks:
+    - Input
+    config:
+      ip: rp-f0c38f.local
+      sample_rate: 4
+      negator_IN1: false
+      negator_IN2: false
+      trigger_slope: rising
+      trigger_mode: normal
+      trigger_level: 100
+      number_of_samples_before_trigger: 500
+      set_size: 100
+      rate: 10000
+      trigger_source: IN1
+      channel: IN1
+  Copy:
+    function: misc.copy
+    sources:
+    - Input
+    sinks:
+    - to_coincidence
+    config: {}
+  Coincidence:
+    file: analyzers.py
+    function: coincidence
+    sources:
+    - to_coincidence
+    sinks:
+    - Coincidences
+    config:
+      IN1:
+        prominence: 200
+        width: 10
+        gradient_min: 0
+      IN2:
+        prominence: 200
+        width: 10
+        gradient_min: 0
+  Save_Coincidence:
+    function: exporters.csv
+    sources:
+    - Coincidences
+    config:
+      filename: coincidences
+      save_interval: 5
+      t_range:
+      - -1000
+      - 1000
+  Visualize_Coincidence:
+    file: coincidences.py
+    function: visualize
+    observes:
+    - Input
+    config:
+      filename: coincidences
+      save_interval: 5
+      t_range:
+      - -1000
+      - 1000
+  Oscilloscope:
+    function: observers.oscilloscope
+    observes:
+    - Input
+    config:
+      ylim:
+      - -4096
+      - 4096
+      colors:
+      - tab:orange
+      - tab:blue
+target_directory: ~/Desktop/target
