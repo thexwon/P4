@@ -1,7 +1,7 @@
 \chapter{Analysis}
 
 \section{Energy Calibration}
-To correctly scale the energy axes of the spectra for later sources, an energy calibration is performed for both detectors. It is done by measuring the photopeak positions of $^{22}$Na, $^{137}$Cs, and $^{57}$Co sources and plotting them over the well known theoretical values of the corresponding transitions, giving a linear fit. These fits for the NaI scintillator and the Ge semiconductor detector respectively are depicted in figs. 
+To correctly scale the energy axes of the spectra for later sources, an energy calibration is performed for both detectors. It is done by measuring the photopeak positions of $^{22}$Na, $^{137}$Cs, and $^{57}$Co sources and plotting them over the well known theoretical values of the corresponding transitions, giving a linear fit. These fits for the NaI scintillator and the Ge semiconductor detector respectively are depicted in figures \ref{fig:linefit_ge} and \ref{fig:linefit_nai}.
 
 \begin{figure}[htb]
     \centering
@@ -30,63 +30,102 @@ To correctly scale the energy axes of the spectra for later sources, an energy c
     \centering
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Co57_G.jpg}
-        %\caption{Bead 1}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co57_Ge_1.jpg}
+        \caption{Data and fit to the first photopeak of the $^{57}$Co source for the Ge semiconductor detector.}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_2.jpg}
-        %\caption{Bead 2}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co57_Ge_2.jpg}
+        \caption{Data and fit to the second photopeak of the $^{57}$Co source for the Ge semiconductor detector.}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_3.jpg}
-        %\caption{Bead 1}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co57_NaI.jpg}
+        \caption{Data and fit to the first photopeak of the $^{57}$Co source for the NaI scintillator detector.}
     \end{subfigure}
     \vspace{0.5cm}
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_4.jpg}
-        %\caption{Bead 1}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Na22_Ge_1.jpg}
+        \caption{Data and fit to the first photopeak of the $^{22}$Na source for the Ge semiconductor detector.}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_5.jpg}
-        %\caption{Bead 2}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Na22_Ge_2.jpg}
+        \caption{Data and fit to the second photopeak of the $^{22}$Na source for the Ge semiconductor detector.}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_6.jpg}
-        %\caption{Bead 1}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Na22_NaI_1.jpg}
+        \caption{Data and fit to the first photopeak of the $^{22}$Na source for the NaI scintillator detector.}
     \end{subfigure}
     \vspace{0.5cm}
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_7.jpg}
-        %\caption{Bead 1}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Na22_NaI_2.jpg}
+        \caption{Data and fit to the second photopeak of the $^{22}$Na source for the NaI scintillator detector.}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_8.jpg}
-        %\caption{Bead 2}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Cs_Ge.jpg}
+        \caption{Data and fit to the photopeak of the $^{137}$Cs source for the Ge semiconductor detector.}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_9.jpg}
-        %\caption{Bead 1}
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Cs_NaI.jpg}
+        \caption{Data and corresponding fit to the photopeak of the $^{137}$Cs source for the NaI scintillator detector.}
     \end{subfigure}
     \vspace{0.5cm}
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_4.jpg}
-        %\caption{Bead 1}
-    \end{subfigure}
-    \caption{Recorded intensity profiles along the horizontal axis (blue dots) and Gaussian fits (red lines) to the ten beads depicted and numbered in Fig. \ref{fig:beads_numbered}. Each data point corresponds to one pixel and its respective intensity. All intensity profiles appear to describe Gaussian curves with few outlying datapoints. Regarding the fit quality, no trivial dependence on maximum intensity can be observed.}
+    \caption{Note that for the $^{57}$Co source, the second peak of the NaI scintillator detector is not distinguishable as it lies within the standard deviation of the first peak. This is due to the lower energy resolution of the scintillator as compared to the semiconductor detector.}
     \label{fig:beads_gaussian_fits}
 \end{figure}
+
+\section{Coincidence Analysis}
+\subsection{$\Delta T$ calibration using  $^{22}$Na coincidences}
+To find a suitable time difference window between the signal of both detectors that correspond to likely coincident signals, a calibration is done using  a $^{22}$Na source, whose signal is perfectly coincident by its $\beta^+$-decay, which leads to an electron-positron annihilation and in turn to the antiparallel emission of two photons, each with an energy of \SI{511}{\kilo eV}. A histogram of the measured time delay between both detectors signals is shown in figure \ref{fig:Na22_coincidence}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{}
+    \caption{Time delay of a coincident signal}
+    \label{fig:Na22_coincidence}
+\end{figure}
+
+A Gaussian fitted to the histogram yields a mean of $\mu = -86.25}$ and a standard deviation of $\sigma = 0.71$. 
+The delay time window corresponding to a likely coincident signal, is set to the interval of $\mu \pm 2\sigma$, i.e. 
+$[-86.67, -84.83]$, which is further used for the coincidence analysis $^{60}$Co.
+
+\subsection{Coincidence analysis of $^{60}$Co}
+
+A coincidence measurement of a $^{60}$Co-source was recorded. The measured spectra for both detectors are visible in figure \ref{fig:60Coa}. Due to an electronics issue that occurred during the measurement, the spectrum recorded by the Germanium detector contains a peak at $\SI{1500}{kEv}$ among other shifted features, such as a third Compton edge. This is remedied by cutting away all data measured after this electronics issue, resulting in a dataset that has $\SI{48}{\%}$
+the size of the original dataset. This dataset is further filtered to only contain data within determined the delay time window, cutting the dataset down further to  $\SI{8}{\%}$ of the original dataset.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}
+        \includegraphics[width=0.5\linewidth]{}
+        \caption{Caption}
+        \label{fig:60Coa}
+    \end{subfigure}
+        \begin{subfigure}
+        \includegraphics[width=0.5\linewidth]{}
+        \caption{Caption}
+        \label{fig:60Cob}
+    \end{subfigure}
+        \begin{subfigure}
+        \includegraphics[width=0.5\linewidth]{}
+        \caption{Caption}
+        \label{fig:60Coc}
+    \end{subfigure}
+
+    \caption{Caption}
+    \label{fig:placeholder}
+\end{figure}
+
+
