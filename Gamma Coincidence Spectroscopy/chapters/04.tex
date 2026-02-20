@@ -1,1 +1,92 @@
-\chapter{Auswertung, Fehlerrechnung und Diskussion der Messergebnisse}
+\chapter{Analysis}
+
+\section{Energy Calibration}
+To correctly scale the energy axes of the spectra for later sources, an energy calibration is performed for both detectors. It is done by measuring the photopeak positions of $^{22}$Na, $^{137}$Cs, and $^{57}$Co sources and plotting them over the well known theoretical values of the corresponding transitions, giving a linear fit. These fits for the NaI scintillator and the Ge semiconductor detector respectively are depicted in figs. 
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Gamma Coincidence Spectroscopy/linefit_ge.jpg}
+    \caption{Linear fit of theoretical transition energy values over photopeak positions for the Ge semiconductor detector.}
+    \label{fig:linefit_ge}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Gamma Coincidence Spectroscopy/linefit_nai.jpg}
+    \caption{Linear fit of theoretical transition energy values over photopeak positions for the NaI scintillator.}
+    \label{fig:linefit_nai}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Co57_G.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_2.jpg}
+        %\caption{Bead 2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_3.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_4.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_5.jpg}
+        %\caption{Bead 2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_6.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_7.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_8.jpg}
+        %\caption{Bead 2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_9.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \vspace{0.5cm}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Flourescence Correlation (FCS)/fit_bead_4.jpg}
+        %\caption{Bead 1}
+    \end{subfigure}
+    \caption{Recorded intensity profiles along the horizontal axis (blue dots) and Gaussian fits (red lines) to the ten beads depicted and numbered in Fig. \ref{fig:beads_numbered}. Each data point corresponds to one pixel and its respective intensity. All intensity profiles appear to describe Gaussian curves with few outlying datapoints. Regarding the fit quality, no trivial dependence on maximum intensity can be observed.}
+    \label{fig:beads_gaussian_fits}
+\end{figure}
