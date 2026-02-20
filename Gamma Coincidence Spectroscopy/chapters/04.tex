@@ -92,39 +92,44 @@ To find a suitable time difference window between the signal of both detectors t
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{}
+    \includegraphics[width=0.7\linewidth]{Gamma Coincidence Spectroscopy/coincidence_fit_22Na.jpg}
     \caption{Time delay of a coincident signal}
     \label{fig:Na22_coincidence}
 \end{figure}
 
-A Gaussian fitted to the histogram yields a mean of $\mu = -86.25}$ and a standard deviation of $\sigma = 0.71$. 
+A Gaussian fitted to the histogram yields a mean of $\mu = -86.25$ and a standard deviation of $\sigma = 0.71$. 
 The delay time window corresponding to a likely coincident signal, is set to the interval of $\mu \pm 2\sigma$, i.e. 
 $[-86.67, -84.83]$, which is further used for the coincidence analysis $^{60}$Co.
 
 \subsection{Coincidence analysis of $^{60}$Co}
 
 A coincidence measurement of a $^{60}$Co-source was recorded. The measured spectra for both detectors are visible in figure \ref{fig:60Coa}. Due to an electronics issue that occurred during the measurement, the spectrum recorded by the Germanium detector contains a peak at $\SI{1500}{kEv}$ among other shifted features, such as a third Compton edge. This is remedied by cutting away all data measured after this electronics issue, resulting in a dataset that has $\SI{48}{\%}$
-the size of the original dataset. This dataset is further filtered to only contain data within determined the delay time window, cutting the dataset down further to  $\SI{8}{\%}$ of the original dataset.
+the size of the original dataset. This dataset is further filtered to only contain data within determined the delay time window, cutting the dataset down further to $\SI{8}{\%}$ of the original dataset.
 
 \begin{figure}
     \centering
-    \begin{subfigure}
-        \includegraphics[width=0.5\linewidth]{}
-        \caption{Caption}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/60Coa.jpg}
+        \caption{Full measured spectrum}
         \label{fig:60Coa}
     \end{subfigure}
-        \begin{subfigure}
-        \includegraphics[width=0.5\linewidth]{}
-        \caption{Caption}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/60Cob.jpg}
+        \caption{Part of measured spectrum without faulty features}
         \label{fig:60Cob}
     \end{subfigure}
-        \begin{subfigure}
-        \includegraphics[width=0.5\linewidth]{}
-        \caption{Caption}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/60Coc.jpg}
+        \caption{Part of measured spectrum further filtered by the delay time window}
         \label{fig:60Coc}
     \end{subfigure}
 
-    \caption{Caption}
+    \caption{Measured, cut and filtered spectra of the $^{60}$Co-source of both detectors.}
     \label{fig:placeholder}
 \end{figure}
 
