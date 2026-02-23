@@ -1,259 +1,59 @@
-\chapter{Analysis}
+\section{Energy Resolution}
 
-\section{Energy Calibration}
-To correctly scale the energy axes of the spectra for later sources, an energy calibration is performed for both detectors. It is done by measuring the photopeak positions of $^{22}$Na, $^{137}$Cs, and $^{57}$Co sources and plotting them over the well known theoretical values of the corresponding transitions, giving a linear fit. These fits for the NaI scintillator and the Ge semiconductor detector respectively are depicted in figures \ref{fig:linefit_ge} and \ref{fig:linefit_nai}. To determine the exact positions of the photopeaks, gaussian fits were used. The fits for all three calibration sources and both detectors are depicted in fig. \ref{fig:photopeaks_gaussian_fits}. The fit parameters of these linear fits can be used to convert from channel numbers to energy:
+The energy resolution $\Delta E / E$ describes the ability of a detector to distinguish between two nearby energy lines. It is defined using the full width at half maximum (FWHM) of a photopeak,
 
-\begin{align}
-    E_\text{Ge} = (0.45 \cdot \text{channel} + 0.08)\si{keV}\\
-    E_\text{NaI} = (0.37 \cdot \text{channel} - 18.67)\si{keV}
-\end{align}
+\begin{equation}
+\Delta E = 2\sqrt{2\ln 2},\sigma \approx 2.355,\sigma ,
+\end{equation}
 
-This can be used to calibrate during later analyses.
+where $\sigma$ is obtained from the Gaussian fits.
 
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.8\linewidth]{Gamma Coincidence Spectroscopy/linefit_ge.jpg}
-    \caption{Linear fit of theoretical transition energy values over photopeak positions for the Ge semiconductor detector.}
-    \label{fig:linefit_ge}
-\end{figure}
+Since the number of generated charge carriers is proportional to the deposited energy and follows Poisson statistics, one expects
 
-\newpage
+\begin{equation}
+\frac{\Delta E}{E} \propto \frac{1}{\sqrt{E}} .
+\end{equation}
 
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.8\linewidth]{Gamma Coincidence Spectroscopy/linefit_nai.jpg}
-    \caption{Linear fit of theoretical transition energy values over photopeak positions for the NaI scintillator.}
-    \label{fig:linefit_nai}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co57_Ge_1.jpg}
-        \caption{Data and fit to the first photopeak of the $^{57}$Co source for the Ge semiconductor detector.}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co57_Ge_2.jpg}
-        \caption{Data and fit to the second photopeak of the $^{57}$Co source for the Ge semiconductor detector.}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co57_NaI.jpg}
-        \caption{Data and fit to the first photopeak of the $^{57}$Co source for the NaI scintillator detector.}
-    \end{subfigure}
-    \vspace{0.5cm}
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Na22_Ge_1.jpg}
-        \caption{Data and fit to the first photopeak of the $^{22}$Na source for the Ge semiconductor detector.}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Na22_Ge_2.jpg}
-        \caption{Data and fit to the second photopeak of the $^{22}$Na source for the Ge semiconductor detector.}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Na22_NaI_1.jpg}
-        \caption{Data and fit to the first photopeak of the $^{22}$Na source for the NaI scintillator detector.}
-    \end{subfigure}
-    \vspace{0.5cm}
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Na22_NaI_2.jpg}
-        \caption{Data and fit to the second photopeak of the $^{22}$Na source for the NaI scintillator detector.}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Cs_Ge.jpg}
-        \caption{Data and fit to the photopeak of the $^{137}$Cs source for the Ge semiconductor detector.}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Cs_NaI.jpg}
-        \caption{Data and corresponding fit to the photopeak of the $^{137}$Cs source for the NaI scintillator detector.}
-    \end{subfigure}
-    \vspace{0.5cm}
-    \caption{Photopeaks and corresponding fits for all calibration sources. Note that for the $^{57}$Co source, the second peak of the NaI scintillator detector is not distinguishable as it lies within the standard deviation of the first peak. This is due to the lower energy resolution of the scintillator as compared to the semiconductor detector.}
-    \label{fig:photopeaks_gaussian_fits}
-\end{figure}
-
-\FloatBarrier
-\newpage
-\FloatBarrier
-\newpage
-
-
-\section{$^{60}$Co $\gamma$-Spectrum}
-After using multiple well-known sources for calibration, an 'unknown' source can now be examined. The spectrum is again recorded with both the Ge semiconductor detector and the NaI scintillator. The spectra are depicted in figs. \ref{fig:Co60_Ge_spectrum} and \ref{fig:Co60_NaI_spectrum} respectively. 
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{Gamma Coincidence Spectroscopy/Co60_Ge_spectrum.jpg}
-    \caption{Full spectrum of the $^{60}$Co source for the Ge semiconductor detector. The features discussed in the theory chapter are clearly visible. The Compton edges are sharper and thus more visible in the spectrum recorded with the Ge semiconductor detector due to the better energy resolution.}
-    \label{fig:Co60_Ge_spectrum}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\linewidth]{Gamma Coincidence Spectroscopy/Co60_NaI_spectrum.jpg}
-    \caption{Full spectrum of the $^{60}$Co source for the NaI scintillator detector. The features discussed in the theory chapter are clearly visible. The backscatter peak in particular is distinguishable in the spectrum of the NaI scintillator module due to the overall higher rate.}
-    \label{fig:Co60_NaI_spectrum}
-\end{figure}
-
-\FloatBarrier
-
-
-
-For both detectors, all features discussed in the theory chapter are visible, even though both spectra only exhibit a single backscatter peak. The Compton edges are sharper and thus more visible in the spectrum recorded with the Ge semiconductor detector due to the better energy resolution: In the spectrum of the NaI scintillator detector, they get 'smeared out'. The backscatter peak is higher in the spectrum of the NaI scintillator module due to the overall higher rate of the same.
-Like during the calibration step, gaussian fits are used to determine the positions of both photopeaks in each spectrum. The positions of the other features are determined by eye from the spectra. All positions are tabulated in tab. \ref{tab:all_features}. The photopeak positions of the Ge semiconductor detector perfectly match the theoretical values. For the NaI scintillator, they deviate but lie well within the 1$\sigma$-standard deviation. 
+To test this behavior, the relative energy resolution was calculated for all measured photopeaks of both detectors. The resulting values are listed in table \ref{tab:energy_resolution}, and $\Delta E/E$ is plotted as a function of $1/\sqrt{E}$ in figure \ref{fig:energy_resolution}. 
 
 \begin{table}[h!]
     \centering
-    \caption{Energy positions of all visible features in both recorded spectra of the $^{60}$Co source.}
-    \begin{tabular}{c c c}
+    \caption{Measured photopeak energies, Gaussian widths, and relative energy resolutions for all sources and both detectors.}
+    \begin{tabular}{l c c c c c c}
         \hline
-        Feature & $E_\text{Ge}$ in keV & $E_\text{NaI}$ in keV \\
+        Source & $E$ (keV) & $\sigma_\text{Ge}$ (keV) & $\Delta E_\text{Ge}/E_\text{Ge}$ & $\sigma_\text{NaI}$ (keV) & $\Delta E_\text{NaI}/E_\text{NaI}$ \\
         \hline
-        Backscatter peak & 225 & 221 \\
-        1st Compton edge & 969 & 914 \\
-        2nd Compton edge & 1123 & 1060 \\
-        1st photopeak & 1173.4 $\pm$ 1.3 & 1179.4 $\pm$ 9.5 \\
-        2nd photopeak & 1332.2 $\pm$ 1.3 & 1337.8 $\pm$ 9.3 \\
+        $^{57}$Co  & 122  & 1.44 & 0.028 & 9.25  & 0.178 \\
+        $^{57}$Co  & 136  & 1.26 & 0.022 & ---   & ---   \\
+        $^{22}$Na  & 511  & 1.31 & 0.006 & 9.81  & 0.045 \\
+        $^{137}$Cs & 662  & 1.13 & 0.004 & 8.88  & 0.031 \\
+        $^{22}$Na  & 1275 & 0.81 & 0.001 & 7.59  & 0.014 \\
+        $^{60}$Co  & 1173 & $\sigma_1^\text{Ge}$ & --- & $\sigma_1^\text{NaI}$ & --- \\
+        $^{60}$Co  & 1332 & $\sigma_2^\text{Ge}$ & --- & $\sigma_2^\text{NaI}$ & --- \\
         \hline
     \end{tabular}
-    \label{tab:all_features}
+    \label{tab:energy_resolution}
 \end{table}
 
-
-
-
-
-
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co60_Ge_1.jpg}
-        \caption{}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co60_Ge_2.jpg}
-        \caption{}
-    \end{subfigure}
-    \vspace{0.5cm}
-    \caption{Data and fits to both photopeaks of the $^{60}$Co source for the Ge semiconductor detector. Note that the x-axis is now in keV, since the energy calibration was used to convert from channel numbers.}
-    \label{fig:Co60_Ge_gaussian_fits}
+    \includegraphics[width=0.9\linewidth]{Gamma Coincidence Spectroscopy/energy_resolution.jpg}
+    \caption{Relative energy resolution $\Delta E / E$ as a function of $1/\sqrt{E}$ for the Ge semiconductor detector (left) and the NaI scintillator (right). A linear fit through the origin of the form $\Delta E/E = \alpha/\sqrt{E}$ is shown in each panel.}
+    \label{fig:energy_resolution}
 \end{figure}
 
+A linear fit through the origin of the form
+\begin{equation}
+\frac{\Delta E}{E} = \frac{\alpha}{\sqrt{E}}
+\end{equation}
 
-\FloatBarrier
+was applied. The fit yields
 
-\begin{figure}[h!]
-    \centering
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co60_NaI_1.jpg}
-        \caption{}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/Co60_NaI_2.jpg}
-        \caption{}
-    \end{subfigure}
-    \vspace{0.5cm}
-    \caption{Data and fits to both photopeaks of the $^{60}$Co source for the NaI scintillator detector. Note that the x-axis is now in keV, since the energy calibration was used to convert from channel numbers.}
-    \label{fig:Co60_NaI_gaussian_fits}
-\end{figure}
+\begin{align}
+\alpha_\text{Ge} &= 0.37 \pm 0.05 \sqrt{\text{keV}}, \\
+\alpha_\text{NaI} &= 3.82 \pm 0.20 \sqrt{\text{keV}}.
+\end{align}
 
+The Ge semiconductor detector shows a significantly smaller resolution coefficient than the NaI scintillator, corresponding to much narrower photopeaks. This agrees with the spectra discussed earlier, where the Ge detector clearly resolves close-lying peaks, while the NaI detector exhibits broader structures.
 
-
-
-
-
-\FloatBarrier
-
-
-
-\section{Coincidence Analysis}
-\subsection{$\Delta T$ calibration using  $^{22}$Na coincidences}
-To find a suitable time difference window between the signal of both detectors that correspond to likely coincident signals, a calibration is done using  a $^{22}$Na source, whose signal is perfectly coincident by its $\beta^+$-decay which leads to an electron-positron annihilation and in turn to the antiparallel emission of two photons, each with an energy of \SI{511}{\kilo eV}. A histogram of the measured time delay between both detectors signals is shown in figure \ref{fig:Na22_coincidence}.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\linewidth]{Gamma Coincidence Spectroscopy/coincidence_fit_22Na.jpg}
-    \caption{Time delay of a coincident signal}
-    \label{fig:Na22_coincidence}
-\end{figure}
-
-A Gaussian fitted to the histogram yields a mean of $\mu = -86.25$ and a standard deviation of $\sigma = 0.71$. 
-The delay time window corresponding to a likely coincident signal, is set to the interval of $\mu \pm 2\sigma$, i.e. 
-$[-86.67, -84.83]$, which is further used for the coincidence analysis $^{60}$Co.
-
-\subsection{Coincidence analysis of $^{60}$Co}
-
-A coincidence measurement of a $^{60}$Co-source was recorded. The measured spectra for both detectors are visible in figure \ref{fig:60Coa}. Due to an electronics issue that occurred during the measurement, the spectrum recorded by the Germanium detector contains a peak at $\SI{1500}{kEv}$ among other shifted features, such as a third Compton edge. This is remedied by cutting away all data measured after this electronics issue, resulting in a dataset that has $\SI{48}{\%}$
-the size of the original dataset. This dataset is further filtered to only contain data within determined the delay time window, cutting the dataset down further to $\SI{8}{\%}$ of the original dataset.
-
-\begin{figure}
-    \centering
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/60Coa.jpg}
-        \caption{Full measured spectrum}
-        \label{fig:60Coa}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/60Cob.jpg}
-        \caption{Part of measured spectrum without faulty features}
-        \label{fig:60Cob}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{0.45\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{Gamma Coincidence Spectroscopy/60Coc.jpg}
-        \caption{Part of measured spectrum further filtered by the delay time window}
-        \label{fig:60Coc}
-    \end{subfigure}
-
-    \caption{Measured, cut and filtered spectra of the $^{60}$Co-source of both detectors.}
-    \label{fig:placeholder}
-\end{figure}
-
-
-
-STH STH ANALYSIS
-
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\linewidth]{Gamma Coincidence Spectroscopy/60CoEvsE.jpg}
-    \caption{Caption}
-    \label{fig:placeholder}
-\end{figure}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.7\linewidth]{Gamma Coincidence Spectroscopy/60CoAreas.jpg}
-    \caption{Caption}
-    \label{fig:placeholder}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{Gamma Coincidence Spectroscopy/coincidence.png}
-    \caption{Caption}
-    \label{fig:placeholder}
-\end{figure}
+The measured data follow the expected $1/\sqrt{E}$ dependence reasonably well for both detectors. This indicates that statistical fluctuations in the number of generated charge carriers are the dominant factor limiting the energy resolution in the investigated energy range. 
