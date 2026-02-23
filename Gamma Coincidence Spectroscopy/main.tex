@@ -4,9 +4,11 @@
 \documentclass[11pt]{scrreprt}
 \usepackage[left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+
+
 \usepackage{float}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{textcomp, gensymb}
 \usepackage{caption}
 \usepackage{xcolor}
@@ -19,10 +21,14 @@
 \usepackage[version=4]{mhchem}
 \usepackage{cleveref}
 \usepackage{import}
+\usepackage{placeins}
 \usepackage{pdfpages}
 \usepackage{tikz}
 \usepackage{booktabs} % Schönere Tabellen
 \usepackage{pgfplots} \pgfplotsset{compat=1.16} % Plotten, Tabellen und vieles mehr
+
+
+
 
 % Verhindert Einrückungen von Text im Dokument
 \setlength\parindent{0pt}
@@ -49,15 +55,15 @@
 %-------------------------------------------------------------------------%
 
 %--------Aufgabenblatt----------%
-\addcontentsline{toc}{chapter}{Aufgabenstellung} %kann so dem Inhaltsverzeichnis hinzugefügt werden
-\includepdf[pages=-, pagecommand={}]{include/Aufgabenblatt.pdf} 
+%\addcontentsline{toc}{chapter}{Aufgabenstellung} %kann so dem Inhaltsverzeichnis hinzugefügt werden
+%\includepdf[pages=-, pagecommand={}]{include/Aufgabenblatt.pdf} 
 % Die Datei Aufgabenblatt.pdf mit dem Inhalt "Test-Test-Test-Test" muss durch das aktuelle Aufgabenblatt des Versuchs ausgetauscht werden.  Der Dateiname muss gleich bleiben oder im \includepdf Befehl geändert werden.
 %-------------------------------%
 
 
 
 %--------Inhalt der Kapitel----------%
-\import{chapters/}{Vorbereitung}
+%\import{chapters/}{Vorbereitung}
 
 \import{chapters/}{01}
 
